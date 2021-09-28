@@ -13,9 +13,76 @@ generator client {
 model User {
   id Int @id @default(autoincrement())
   name String 
+  userName String @unique
+  dni Int @unique
+  birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
+  cellphone Int 
+  mail String @unique//Ver si es unique para el ingreso o solo por name
+  image String?
+  password String //Fijarse en la documentación que posibilidades hay 
+  player Player @relation(fields: [playerId], references: [id])
+  playerId Int
 }
 
 model Player {
   id Int @id @default(autoincrement())
-  username String @unique 
+  position Position 
+  qualification Stars //Ver porque el enum no toma numeros o sino un radio
+  user User[] //porque es necesario que sea un array o no sea obligatorio(?)
+  teams TeamPlayers[]
+}
+
+model Team {
+  id Int @id @default(autoincrement())
+  name String
+  image String?
+  qualifaction Stars //Ver porque el enum no toma numeros o sino un radio
+  players TeamPlayers[]
+}
+
+model TeamPlayers {
+    id Int @id @default(autoincrement())
+    player Player @relation(fields: [playerId], references: [id])
+    playerId Int
+    team Team @relation(fields: [teamId], references: [id])
+    teamId Int
+    assignedAt DateTime @default(now())
+}
+
+model Field {
+  id Int @id @default(autoincrement())
+  number Fields
+  cost Int //Ver si se puede poner con signo de peso antes del Int
+  image String
+  description String
+
+}
+
+model TimeTable{
+  id Int @id @default(autoincrement())
+  day String
+  hour String
+}
+
+
+
+enum Position {
+  GOALKEEPER
+  DEFENDER
+  MIDFIELDER
+  ATTACKER
+}
+
+enum Stars {
+  ONE
+  TWO
+  THREE
+  FOUR
+  FIVE
+}
+
+enum Fields {
+  ONE
+  TWO
+  THREE
 }

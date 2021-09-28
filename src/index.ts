@@ -9,3 +9,4 @@ app.get('/', (req: Express.Request, res: Express.Response) => (
 ))
 
 app.listen(3000, () => console.log("Server funcionando"))
+//Change
