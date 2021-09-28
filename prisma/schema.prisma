@@ -29,7 +29,7 @@ model Player {
   position Position 
   qualification Stars //Ver porque el enum no toma numeros o sino un radio
   user User[] //porque es necesario que sea un array o no sea obligatorio(?)
-  teams TeamPlayers[]
+  team Team_Player[]
 }
 
 model Team {
@@ -37,16 +37,17 @@ model Team {
   name String
   image String?
   qualifaction Stars //Ver porque el enum no toma numeros o sino un radio
-  players TeamPlayers[]
+  player Team_Player[]
+  game Game[]
 }
 
-model TeamPlayers {
-    id Int @id @default(autoincrement())
-    player Player @relation(fields: [playerId], references: [id])
-    playerId Int
-    team Team @relation(fields: [teamId], references: [id])
-    teamId Int
-    assignedAt DateTime @default(now())
+model Team_Player {
+  id Int @id @default(autoincrement())
+  player Player @relation(fields: [playerId], references: [id])
+  playerId Int
+  team Team @relation(fields: [teamId], references: [id])
+  teamId Int
+  assignedAt DateTime @default(now())
 }
 
 model Field {
@@ -55,16 +56,33 @@ model Field {
   cost Int //Ver si se puede poner con signo de peso antes del Int
   image String
   description String
-
+  timetable Field_Timetable[]
 }
 
 model TimeTable{
   id Int @id @default(autoincrement())
   day String
   hour String
+  field Field_Timetable[]
 }
 
+model Game {
+  id Int @id @default(autoincrement())
+  team Team @relation(fields: [teamId], references: [id])
+  teamId Int
+  field_timetable Field_Timetable @relation(fields: [field_timetableId], references: [id])
+  field_timetableId Int
+}
 
+model Field_Timetable {
+  id Int @id @default(autoincrement())
+  available Boolean
+  field Field @relation(fields: [fieldId], references: [id])
+  fieldId Int
+  timetable TimeTable @relation(fields: [timetableId], references: [id])
+  timetableId Int
+  game Game[]
+}
 
 enum Position {
   GOALKEEPER
