@@ -16,10 +16,10 @@ const usuarios = [
     image: "url",
     password: "123456",
     player: {
-      
+      create: {
         position: "ATTACKER",
         qualification: "FIVE",
-      
+      },
     },
   },
   {
@@ -33,10 +33,10 @@ const usuarios = [
     password: "123456",
     gender: "FEMALE",
     player: {
-      
+      create: {
         position: "ATTACKER",
         qualification: "FIVE",
-     
+      },
     },
   },
   {
@@ -50,10 +50,10 @@ const usuarios = [
     image: "url",
     password: "123456",
     player: {
-      
+      create: {
         position: "ATTACKER",
         qualification: "FIVE",
-    
+      },
     },
   },
   {
@@ -67,10 +67,10 @@ const usuarios = [
     image: "url",
     password: "123456",
     player: {
-     
+      create: {
         position: "ATTACKER",
         qualification: "FIVE",
-    
+      },
     },
   },
   {
@@ -84,10 +84,10 @@ const usuarios = [
     image: "url",
     password: "123456",
     player: {
-    
+      create: {
         position: "ATTACKER",
         qualification: "FIVE",
-     
+      },
     },
   },
 ];
@@ -97,7 +97,6 @@ async function main() {
     usuarios.forEach(async(user)=> {
         await prisma.user.create({
             data: user
-            
           });
     })
 }
