@@ -1,10 +1,10 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
+import User from '../src/controllers/user/type'
 
 
 
-
-const usuarios = [
+const usuarios:  Prisma.UserCreateInput[] = [
   {
     name: "jaime",
     userName: "parzival2",
@@ -94,13 +94,18 @@ const usuarios = [
 
 
 async function main() {
-    usuarios.forEach(async(user)=> {
+    usuarios.forEach(async(user) => {
         await prisma.user.create({
             data: user
           });
     })
 }
 
-
-
 main()
+  .catch((e) => {
+    console.error(e)
+    process.exit(1)
+  })
+  .finally(async () => {
+    await prisma.$disconnect()
+  })

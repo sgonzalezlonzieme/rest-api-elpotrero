@@ -1,7 +1,7 @@
 import { Gender } from ".prisma/client"
 import { Player } from ".prisma/client"
 
-interface User {
+export default interface User {
     id?: number,
     name: string,
     userName: string,

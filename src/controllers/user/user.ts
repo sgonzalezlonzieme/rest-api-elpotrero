@@ -1,5 +1,5 @@
 import Express from 'express'
-import { User } from './type'
+import  User  from './type'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
