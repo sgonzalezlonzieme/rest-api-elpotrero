@@ -14,6 +14,7 @@ model User {
   id Int @id @default(autoincrement())
   name String 
   userName String @unique
+  gender Gender
   dni Int @unique
   birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
   cellphone Int 
@@ -24,11 +25,16 @@ model User {
   playerId Int
 }
 
+enum Gender {
+  FEMALE 
+  MALE
+}
+
 model Player {
   id Int @id @default(autoincrement())
   position Position 
   qualification Stars //Ver porque el enum no toma numeros o sino un radio
-  user User[] //porque es necesario que sea un array o no sea obligatorio(?)
+  user User[] 
   team Team_Player[]
 }
 
