@@ -14,7 +14,7 @@ model User {
   id Int @id @default(autoincrement())
   name String 
   userName String @unique
-  gender Gender
+  gender Gender?
   dni Int @unique
   birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
   cellphone Int 
@@ -28,6 +28,7 @@ model User {
 enum Gender {
   FEMALE 
   MALE
+  UNDEFINED
 }
 
 model Player {
