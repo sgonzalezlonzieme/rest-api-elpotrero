@@ -83,7 +83,6 @@ model Game {
 
 model Field_Timetable {
   id Int @id @default(autoincrement())
-  available Boolean
   field Field @relation(fields: [fieldId], references: [id])
   fieldId Int
   timetable TimeTable @relation(fields: [timetableId], references: [id])
