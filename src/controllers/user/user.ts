@@ -3,8 +3,6 @@ import  User  from './type'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-
-
 async function postUser (req: Express.Request, res: Express.Response){
     try{
         const user: User = req.body
@@ -27,7 +25,7 @@ async function postUser (req: Express.Request, res: Express.Response){
                     }
                 }
             }
-        })//Hablar front 
+        })
 
         res.json(newUser)
 
