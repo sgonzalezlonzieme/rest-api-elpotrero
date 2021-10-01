@@ -34,7 +34,7 @@ enum Gender {
 model Player {
   id Int @id @default(autoincrement())
   position Position 
-  qualification Stars //Ver porque el enum no toma numeros o sino un radio
+  qualification Stars //enum 
   user User[] 
   team Team_Player[]
 }
@@ -43,9 +43,9 @@ model Team {
   id Int @id @default(autoincrement())
   name String
   image String?
-  qualifaction Stars //Ver porque el enum no toma numeros o sino un radio
-  player Team_Player[]
-  game Game[]
+  qualification Stars //enum
+  player Team_Player[] //pasarlo a plural si prisma lo permite
+  game Game[] //pasarlo a plural si prisma lo permite
 }
 
 model Team_Player {

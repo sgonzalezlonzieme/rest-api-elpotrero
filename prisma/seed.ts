@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 import users from './seedsData/user'
+import teams from './seedsData/team'
 
 
 async function main() {
@@ -9,6 +10,14 @@ async function main() {
             data: user
           });
     })
+
+    teams.forEach(async(team) => {
+        await prisma.team.create({
+            data: team
+        })
+    })
+
+    
 }
 
 main()

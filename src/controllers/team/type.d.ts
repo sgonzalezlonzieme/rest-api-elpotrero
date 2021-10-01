@@ -6,5 +6,5 @@ import { Game } from ".prisma/client";
        id?: number,
        name: string,
        image: string | undefined,
-       qualifaction: Stars,
+       qualification: Stars,
   }
