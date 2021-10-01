@@ -8,3 +8,7 @@ import { Game } from ".prisma/client";
        image: string | undefined,
        qualification: Stars,
   }
+
+  export default interface TeamId {
+       id: number,
+  }
