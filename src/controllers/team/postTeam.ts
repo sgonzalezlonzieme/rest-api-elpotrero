@@ -18,6 +18,7 @@ async function postTeam (req: Express.Request, res: Express.Response){
                    qualification: team.qualification
                 }
             })
+            //player hacerlo acá
    
             res.json(newTeam)
 
