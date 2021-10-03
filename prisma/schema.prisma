@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url = "postgresql://postgres:Maricuchi1@localhost:5432/elPotreroPg?schema=public"
 }
 
 generator client {
@@ -60,6 +60,8 @@ model Team_Player {
 model Field {
   id Int @id @default(autoincrement())
   number Fields
+  inicialTime String // cambio de modelo se agrego inicialTime y endTime
+  endTime String
   cost Int //Ver si se puede poner con signo de peso antes del Int
   image String
   description String
