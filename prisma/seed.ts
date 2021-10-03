@@ -4,7 +4,6 @@ import users from './seedsData/user'
 import fields from './seedsData/fields'
 import teams from './seedsData/team'
 
-
 async function main() {
 
     users.forEach(async(user) => {
