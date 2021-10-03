@@ -14,6 +14,7 @@ async function getPlayers (req: Express.Request, res: Express.Response){
       return {
         id: p.id,
         qualification: p.qualification,
+        position: p.position,
         name: p.user[0].name,
         gender: p.user[0].gender,
         birthday: p.user[0].birthday,
