@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import postUser from '../controllers/user/user';
 const router = Router();
+import userRoute from './user';
+import playerRoute from './player';
 
-router.use('/user', postUser)
+router.use('/user', userRoute);
+router.use('/player', playerRoute);
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
-export default router
+export default router;
