@@ -4,6 +4,7 @@ import users from './seedsData/user'
 import fields from './seedsData/fields'
 import timetables from "./seedsData/timetable";
 import field_timetables from "./seedsData/field_timetable";
+import teams from './seedsData/team'
 
 
 async function main() {
@@ -27,7 +28,13 @@ async function main() {
   //       data:field_timetable
   //   })
   // })
+    teams.forEach(async(team) => {
+        await prisma.team.create({
+            data: team
+        })
+    })
 
+    
 }
 
 main()
