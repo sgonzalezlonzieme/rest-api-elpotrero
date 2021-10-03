@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
 
-const users: Prisma.UserCreateInput[] = [
+const users:  Prisma.UserCreateInput[] = [
     {
       name: "jaime",
       userName: "parzival2",
