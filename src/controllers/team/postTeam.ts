@@ -8,7 +8,6 @@ const prisma = new PrismaClient()
 async function postTeam (req: Express.Request, res: Express.Response){
 
         try{
-            
             const team: Team = req.body;
    
             const newTeam = await prisma.team.create({
@@ -16,9 +15,10 @@ async function postTeam (req: Express.Request, res: Express.Response){
                    name: team.name,
                    image: team.image,
                    qualification: team.qualification
+                   //player hacerlo acá - relación de muchos a muchos
                 }
             })
-            //player hacerlo acá
+          
    
             res.json(newTeam)
 

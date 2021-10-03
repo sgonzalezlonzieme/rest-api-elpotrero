@@ -11,4 +11,5 @@ import { Game } from ".prisma/client";
 
   export default interface TeamId {
        id: number,
-  }
+  }//Comentario de prubea para el git.
+   
