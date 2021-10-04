@@ -8,6 +8,7 @@ const fields: Field[] = [
     endTime: "22hs",
     image: "URL",
     description: "Cancha recientemente pintada y con nuevos arcos"   
+    
 },
 {
     number: "TWO",

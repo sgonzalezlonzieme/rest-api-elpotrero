@@ -2,6 +2,7 @@ import Express from 'express';
 import Team from './type';
 import TeamId from './type';
 import { PrismaClient } from '@prisma/client'
+import { create } from 'domain';
 const prisma = new PrismaClient()
 
 
@@ -15,9 +16,17 @@ async function postTeam (req: Express.Request, res: Express.Response){
                    name: team.name,
                    image: team.image,
                    qualification: team.qualification
-                   //player hacerlo acá - relación de muchos a muchos
-                }
-            })
+                },
+                // create: [
+                //     {
+                //         player: {
+                //             connect: {
+                //               id: 1,
+                //             }
+                //         }
+                //     }
+                // ]
+             })
           
    
             res.json(newTeam)

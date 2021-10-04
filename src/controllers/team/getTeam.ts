@@ -7,14 +7,6 @@ async function getTeam(req: Express.Request, res: Express.Response){
     let id: string = req.params.id //ponerle type number
 
     let teamId: number = parseInt(id)
-    
-    //ESTO NO VA ACÁ, VA EN EL POST
-    await prisma.team_Player.create({
-        data: {
-            teamId: teamId,
-            playerId: 1
-        }
-    })
 
     const team = await prisma.team.findUnique({
          where: {id: teamId},

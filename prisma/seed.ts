@@ -23,8 +23,6 @@ async function main() {
             data: team
         })
     })
-
-    
 }
 
 main()

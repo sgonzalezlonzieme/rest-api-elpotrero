@@ -34,28 +34,31 @@ enum Gender {
 model Player {
   id Int @id @default(autoincrement())
   position Position 
-  qualification Stars //enum 
+  qualification Int @default(3)
+  votes Int @default(1)
   user User[] 
-  team Team_Player[]
+  team Team @relation(fields: [teamId], references: [id])
+  teamId Int
 }
 
 model Team {
   id Int @id @default(autoincrement())
   name String
   image String?
-  qualification Stars //enum
-  player Team_Player[] //pasarlo a plural si prisma lo permite
+  qualification Int @default(3)
+  votes Int @default(1)
+  player Player[] //pasarlo a plural si prisma lo permite
   game Game[] //pasarlo a plural si prisma lo permite
 }
 
-model Team_Player {
-  id Int @id @default(autoincrement())
-  player Player @relation(fields: [playerId], references: [id])
-  playerId Int
-  team Team @relation(fields: [teamId], references: [id])
-  teamId Int
-  assignedAt DateTime @default(now())
-}
+// model Team_Player {
+//   id Int @id @default(autoincrement())
+//   player Player @relation(fields: [playerId], references: [id])
+//   playerId Int
+//   team Team @relation(fields: [teamId], references: [id])
+//   teamId Int
+//   assignedAt DateTime @default(now())
+// }
 
 model Field {
   id Int @id @default(autoincrement())
@@ -65,32 +68,47 @@ model Field {
   cost Int //Ver si se puede poner con signo de peso antes del Int
   image String
   description String
-  timetable Field_Timetable[]
+  timetable TimeTable[]
+  qualification Int @default(3)
+  votes Int @default(1)
+  fieldCharacters FieldCharacters?
+}
+
+model FieldCharacters {
+  id Int @id @default(autoincrement())
+  floorType FloorType
+  light Boolean 
+  soccerField Int @default(5)
+  roofed Boolean
+  field Field @relation(fields: [fieldId], references: [id])
+  fieldId Int
 }
 
 model TimeTable{
   id Int @id @default(autoincrement())
   day String
   hour String
-  field Field_Timetable[]
+  field Field @relation(fields: [fieldId], references: [id])
+  fieldId Int
+  game Game @relation(fields: [gameId], references: [id])
+  gameId Int
 }
 
 model Game {
   id Int @id @default(autoincrement())
   team Team @relation(fields: [teamId], references: [id])
   teamId Int
-  field_timetable Field_Timetable @relation(fields: [field_timetableId], references: [id])
-  field_timetableId Int
+  timetable TimeTable?
 }
 
-model Field_Timetable {
-  id Int @id @default(autoincrement())
-  field Field @relation(fields: [fieldId], references: [id])
-  fieldId Int
-  timetable TimeTable @relation(fields: [timetableId], references: [id])
-  timetableId Int
-  game Game[]
-}
+// model Field_Timetable {
+//   id Int @id @default(autoincrement())
+//   field Field @relation(fields: [fieldId], references: [id])
+//   fieldId Int
+//   timetable TimeTable @relation(fields: [timetableId], references: [id])
+//   timetableId Int
+//   game Game[]
+// }
 
 enum Position {
   GOALKEEPER
@@ -99,12 +117,11 @@ enum Position {
   ATTACKER
 }
 
-enum Stars {
-  ONE
-  TWO
-  THREE
-  FOUR
-  FIVE
+enum FloorType {
+   SYNTHETIC
+   GRASS
+   CEMENT
+   RUBBER 
 }
 
 enum Fields {
