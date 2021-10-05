@@ -14,7 +14,8 @@ const users: Prisma.UserCreateInput[] = [
       player: {
         create: {
           position: "ATTACKER",
-          qualification: "FIVE",
+          qualification: 20,
+          votes: 4,
         },
       },
     },
@@ -31,7 +32,8 @@ const users: Prisma.UserCreateInput[] = [
       player: {
         create: {
           position: "ATTACKER",
-          qualification: "FIVE",
+          qualification: 20,
+          votes: 4,
         },
       },
     },
@@ -48,7 +50,9 @@ const users: Prisma.UserCreateInput[] = [
       player: {
         create: {
           position: "ATTACKER",
-          qualification: "FIVE",
+          qualification: 20,
+          votes: 4,
+       
         },
       },
     },
@@ -65,7 +69,9 @@ const users: Prisma.UserCreateInput[] = [
       player: {
         create: {
           position: "ATTACKER",
-          qualification: "FIVE",
+          qualification: 20,
+          votes: 4,
+
         },
       },
     },
@@ -82,7 +88,9 @@ const users: Prisma.UserCreateInput[] = [
       player: {
         create: {
           position: "ATTACKER",
-          qualification: "FIVE",
+          qualification: 20,
+          votes: 4,
+        
         },
       },
     },

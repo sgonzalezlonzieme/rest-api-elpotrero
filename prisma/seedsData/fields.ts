@@ -2,8 +2,9 @@ import Field from "../../src/controllers/fields/type"
 
 const fields: Field[] = [
 {
-    number: "ONE",
-    cost: 132142141223,
+    name: "Ferroviarios",
+    address: "9 de julio al 600",
+    cost: 1000,
     inicialTime:"10hs", 
     endTime: "22hs",
     image: "URL",
@@ -11,16 +12,18 @@ const fields: Field[] = [
     
 },
 {
-    number: "TWO",
-    cost: 132142,
+    name: "Bombonerita",
+    address: "Irala al 1500",
+    cost: 800,
     inicialTime:"10hs", 
     endTime: "22hs",
     image: "URL",
     description: "Cancha de cesped sintetico colocado en septiembre 2021"
 },
 {
-    number: "THREE",
-    cost: 1340596,
+    name: "El ciclon",
+    address: "Av. La Plata al 3100",
+    cost: 900,
     inicialTime:"10hs", 
     endTime: "22hs",
     image: "URL",

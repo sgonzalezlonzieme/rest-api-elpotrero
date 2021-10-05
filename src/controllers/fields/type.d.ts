@@ -2,7 +2,8 @@ import { Fields } from ".prisma/client"
 
 
 export default interface Field {
-    number: Fields,
+    name: string,
+    address: string,
     inicialTime: string,
     endTime: string,
     cost: number,

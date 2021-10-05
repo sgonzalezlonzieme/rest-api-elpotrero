@@ -2,24 +2,28 @@ import Team from "../../src/controllers/team/type"
 
 const team: Team[] = [
     {
-    "name": "Boca",
-    "image": "url",
-    "qualification": "FIVE"
+    name: "Boca",
+    image: "url",
+    qualification: 5,
+    votes: 2,
     },
     {
-    "name": "River",
-    "image": "url",
-    "qualification": "ONE"
+    name: "River",
+    image: "url",
+    qualification: 12,
+    votes: 3,
     },
     {
-    "name": "Vegeta´s Team",
-    "image": "url",
-    "qualification": "FIVE"
+    name: "San Lorenzo",
+    image: "url",
+    qualification: 17,
+    votes: 4,
     },
     {
-    "name": "KRILLIN´S TEAM",
-    "image": "url",
-    "qualification": "ONE"
+    name: "Ferro",
+    image: "url",
+    qualification: 17,
+    votes: 5,
     },
 ]
 

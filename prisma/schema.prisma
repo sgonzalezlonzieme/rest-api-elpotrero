@@ -25,20 +25,14 @@ model User {
   playerId Int
 }
 
-enum Gender {
-  FEMALE 
-  MALE
-  UNDEFINED
-}
-
 model Player {
   id Int @id @default(autoincrement())
   position Position 
   qualification Int @default(3)
   votes Int @default(1)
   user User[] 
-  team Team @relation(fields: [teamId], references: [id])
-  teamId Int
+  team Team? @relation(fields: [teamId], references: [id])
+  teamId Int? 
 }
 
 model Team {
@@ -51,18 +45,11 @@ model Team {
   game Game[] //pasarlo a plural si prisma lo permite
 }
 
-// model Team_Player {
-//   id Int @id @default(autoincrement())
-//   player Player @relation(fields: [playerId], references: [id])
-//   playerId Int
-//   team Team @relation(fields: [teamId], references: [id])
-//   teamId Int
-//   assignedAt DateTime @default(now())
-// }
 
 model Field {
   id Int @id @default(autoincrement())
-  number Fields
+  name String
+  address String
   inicialTime String // cambio de modelo se agrego inicialTime y endTime
   endTime String
   cost Int //Ver si se puede poner con signo de peso antes del Int
@@ -101,14 +88,6 @@ model Game {
   timetable TimeTable?
 }
 
-// model Field_Timetable {
-//   id Int @id @default(autoincrement())
-//   field Field @relation(fields: [fieldId], references: [id])
-//   fieldId Int
-//   timetable TimeTable @relation(fields: [timetableId], references: [id])
-//   timetableId Int
-//   game Game[]
-// }
 
 enum Position {
   GOALKEEPER
@@ -124,8 +103,26 @@ enum FloorType {
    RUBBER 
 }
 
-enum Fields {
-  ONE
-  TWO
-  THREE
+enum Gender {
+  FEMALE 
+  MALE
+  UNDEFINED
 }
+
+// model Team_Player {
+//   id Int @id @default(autoincrement())
+//   player Player @relation(fields: [playerId], references: [id])
+//   playerId Int
+//   team Team @relation(fields: [teamId], references: [id])
+//   teamId Int
+//   assignedAt DateTime @default(now())
+// }
+
+// model Field_Timetable {
+//   id Int @id @default(autoincrement())
+//   field Field @relation(fields: [fieldId], references: [id])
+//   fieldId Int
+//   timetable TimeTable @relation(fields: [timetableId], references: [id])
+//   timetableId Int
+//   game Game[]
+// }
