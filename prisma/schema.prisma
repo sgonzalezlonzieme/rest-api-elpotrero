@@ -18,7 +18,7 @@ model User {
   dni Int @unique
   birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
   cellphone Int 
-  mail String @unique//Ver si es unique para el ingreso o solo por name
+  mail String @unique//Cambiar a email
   image String?
   password String //Fijarse en la documentación que posibilidades hay 
   player Player @relation(fields: [playerId], references: [id])

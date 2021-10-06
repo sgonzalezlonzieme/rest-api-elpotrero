@@ -2,6 +2,7 @@ import Express from 'express';
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
+
 async function getTeam(req: Express.Request, res: Express.Response){
          
     let id: string = req.params.id //ponerle type number
