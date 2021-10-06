@@ -25,7 +25,7 @@ async function postUser (req: Express.Request, res: Express.Response){
 
         //await bcrypt.compare(user.password, user.password)
 
-        const newUser = await prisma.user.create({
+        await prisma.user.create({
             data: {
                 name: user.name,
                 userName: user.userName,
@@ -45,9 +45,10 @@ async function postUser (req: Express.Request, res: Express.Response){
             }
         })
 
-        res.json(newUser)
+        res.json('Se registro exitosamente')
 
     }catch(error){
+
         res.status(404).send({mensaje: "Error en el post de user", error: error})
     }
    
