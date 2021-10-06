@@ -54,14 +54,14 @@ model Field {
   endTime String
   cost Int //Ver si se puede poner con signo de peso antes del Int
   image String
-  description String
+  description String?
   timetable TimeTable[]
   qualification Int @default(3)
   votes Int @default(1)
-  fieldCharacters FieldCharacters?
+  fieldCharacteristics FieldCharacteristics?
 }
 
-model FieldCharacters {
+model FieldCharacteristics {
   id Int @id @default(autoincrement())
   floorType FloorType
   light Boolean 
@@ -75,10 +75,11 @@ model TimeTable{
   id Int @id @default(autoincrement())
   day String
   hour String
+  duration Int @default(1)
   field Field @relation(fields: [fieldId], references: [id])
   fieldId Int
-  game Game @relation(fields: [gameId], references: [id])
-  gameId Int
+  game Game? @relation(fields: [gameId], references: [id])
+  gameId Int?
 }
 
 model Game {
@@ -99,8 +100,7 @@ enum Position {
 enum FloorType {
    SYNTHETIC
    GRASS
-   CEMENT
-   RUBBER 
+   CEMENT 
 }
 
 enum Gender {

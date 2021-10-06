@@ -3,6 +3,7 @@ const prisma = new PrismaClient();
 import users from './seedsData/user'
 import fields from './seedsData/fields'
 import teams from './seedsData/team'
+import timetables from "./seedsData/timetable";
 
 async function main() {
 
@@ -21,8 +22,15 @@ async function main() {
     teams.forEach(async(team) => {
         await prisma.team.create({
             data: team
-        })
+        });
     })
+
+    timetables.forEach(async(timetable) => {
+      await prisma.timeTable.create({
+          data: timetable
+      });
+  })
+  
 }
 
 main()

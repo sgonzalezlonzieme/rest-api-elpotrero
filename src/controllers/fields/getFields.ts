@@ -1,5 +1,4 @@
 import Express from 'express'
-import  Field  from './type'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
