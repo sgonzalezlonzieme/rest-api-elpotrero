@@ -2,17 +2,16 @@ import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 import TimeTable from './type'
+import dateChange from './dateChange'
 
 
 async function postTimetable (req: Express.Request, res: Express.Response){
     try{
-        const timetable: TimeTable = req.body
-        // let hourFormat = timetable.hour
-        
+        let timetable: TimeTable = req.body
 
         const newTimetable = await prisma.timeTable.create({
             data:{
-                day: timetable.day,
+                day: dateChange(timetable.day),
                 hour: timetable.hour,
                 duration: timetable.duration,
                 field:{

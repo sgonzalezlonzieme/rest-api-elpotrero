@@ -1,11 +1,13 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+import dateChange from '../timetable/dateChange'
 
 async function getFieldsAvailable (req: Express.Request, res: Express.Response){
-    const calendar = req.query
-    let day = calendar.day?.toString()
-    let hour = calendar.hour?.toString()
+    const calendar = req.body
+    let day = dateChange(calendar.day)
+    // let hour = calendar.hour?.toString()
+    let hour = calendar.hour
     
     if(hour && calendar){
         const fields = await prisma.field.findMany({
