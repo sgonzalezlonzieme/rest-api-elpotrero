@@ -6,7 +6,7 @@ export default interface TimeTable {
     hour: string,
     duration: number,
     field:Field,
-    game: Game,
+    game?: Game,
 }
 
 
