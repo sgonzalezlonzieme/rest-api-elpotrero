@@ -8,7 +8,7 @@ async function postUser (req: Express.Request, res: Express.Response){
       
     try{
         const user: User = req.body
-
+        
         const findUser = await prisma.user.findFirst({
             where: {
                 mail: user.mail
@@ -18,6 +18,7 @@ async function postUser (req: Express.Request, res: Express.Response){
         if(findUser){
             res.send('El usuario ya existe')
         }
+        //HACER PARA LOS OTROS DOS UNIQUE
 
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(user.password, salt)
@@ -40,6 +41,7 @@ async function postUser (req: Express.Request, res: Express.Response){
                     create: {
                         position: user.player.position,
                         qualification: user.player.qualification,
+                        // votes: user.player.votes
                     }
                 }
             }
@@ -51,7 +53,6 @@ async function postUser (req: Express.Request, res: Express.Response){
 
         res.status(404).send({mensaje: "Error en el post de user", error: error})
     }
-   
 }
 
 export default postUser
