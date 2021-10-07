@@ -9,16 +9,35 @@ async function postUser (req: Express.Request, res: Express.Response){
     try{
         const user: User = req.body
         
-        const findUser = await prisma.user.findFirst({
+        const userMail = await prisma.user.findFirst({
             where: {
                 mail: user.mail
             } 
         })
          
-        if(findUser){
-            res.send('El usuario ya existe')
+        if(userMail){
+            return res.send('El email ya existe')
         }
-        //HACER PARA LOS OTROS DOS UNIQUE
+
+        const userDni = await prisma.user.findFirst({
+            where: {
+                dni: user.dni
+            } 
+        })
+         
+        if(userDni){
+            return res.send('El dni ya existe')
+        }
+
+        const userName = await prisma.user.findFirst({
+            where: {
+                userName: user.userName
+            } 
+        })
+         
+        if(userName){
+            return res.send('El nombre de usuario ya existe')
+        }
 
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(user.password, salt)

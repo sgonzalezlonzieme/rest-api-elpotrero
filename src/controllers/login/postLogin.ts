@@ -36,7 +36,7 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
             return res.status(200).json({token: createToken(userData)})
         }
       
-        return res.status(400).json("El email o la contraseña son incorrectas")
+        return res.status(400).json("El contraseña son incorrecta")
 
 }
 
