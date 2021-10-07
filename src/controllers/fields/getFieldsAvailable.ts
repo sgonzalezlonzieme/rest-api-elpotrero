@@ -3,18 +3,37 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function getFieldsAvailable (req: Express.Request, res: Express.Response){
-    const dayFilter = req.query
+    const calendar = req.query
+    let day = calendar.day?.toString()
+    let hour = calendar.hour?.toString()
+    if(hour && calendar){
+        const fields = await prisma.field.findMany({
+            include:{
+                timetable: {
+                    where:{
+                        day: day,
+                        hour: hour
+                    }
+                }
+            }
+        })
+    
+        res.json(fields)
+    }
+
+    if(calendar && !hour){
     const fields = await prisma.field.findMany({
         include:{
             timetable: {
                 where:{
-                    day:dayFilter,
+                    day: day,
                 }
             }
         }
     })
 
     res.json(fields)
+    }
 } 
 
 export default getFieldsAvailable
