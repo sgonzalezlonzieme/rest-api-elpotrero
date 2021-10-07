@@ -6,6 +6,7 @@ async function getFieldsAvailable (req: Express.Request, res: Express.Response){
     const calendar = req.query
     let day = calendar.day?.toString()
     let hour = calendar.hour?.toString()
+    
     if(hour && calendar){
         const fields = await prisma.field.findMany({
             include:{

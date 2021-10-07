@@ -7,7 +7,8 @@ import TimeTable from './type'
 async function postTimetable (req: Express.Request, res: Express.Response){
     try{
         const timetable: TimeTable = req.body
-        let hourFormat = timetable.hour
+        // let hourFormat = timetable.hour
+        
 
         const newTimetable = await prisma.timeTable.create({
             data:{
