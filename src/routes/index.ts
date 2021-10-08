@@ -10,7 +10,7 @@ router.use('/user', userRoute);
 router.use('/player', playerRoute);
 router.use('/fields', fieldRoute)
 router.use('/team', teamRoute) 
-router.use('/login', loginRoute)
+router.use('/auth', loginRoute)
 
 
 // Configurar los routers

@@ -1,14 +1,14 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
-import passport from 'passport'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import config from '../../config/config'
 
 function createToken(user: any){
     //CONFIGURAR EL TIEMPO DE SESIÓN
-      return jwt.sign({id: user.id, password: user.password}, config.jwtSecret)
+      return jwt.sign({id: user.id, password: user.password}, config.jwtSecret,
+        { expiresIn: "60m"})
 }
 
 async function postLogin(req: Express.Request, res: Express.Response ) {
@@ -33,7 +33,17 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
         const isMatch = await bcrypt.compare(userData.password, user.password)
         
         if(isMatch){
-            return res.status(200).json({token: createToken(userData)})
+             
+            const createdToken: string = createToken(userData)
+
+            const userUpdated = await prisma.user.update({
+                where: {id: user.id},
+                data: { 
+                    token: createdToken 
+                }
+            }) 
+         
+            return res.status(200).json({userId :userUpdated.id, token: userUpdated.token})
         }
       
         return res.status(400).json("El contraseña son incorrecta")
