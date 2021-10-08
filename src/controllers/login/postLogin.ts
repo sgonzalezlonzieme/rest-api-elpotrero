@@ -4,8 +4,10 @@ const prisma = new PrismaClient()
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import config from '../../config/config'
+import {TokenData, LoginData} from './type'
 
-function createToken(user: any){
+
+function createToken(user: TokenData){
     //CONFIGURAR EL TIEMPO DE SESIÓN
       return jwt.sign({id: user.id, password: user.password}, config.jwtSecret,
         { expiresIn: "60m"})
@@ -14,7 +16,7 @@ function createToken(user: any){
 async function postLogin(req: Express.Request, res: Express.Response ) {
         
         //type userLogin
-        const userData: any = req.body  
+        const userData: LoginData = req.body  
 
         if(!userData.password || !userData.mail){
             return res.status(404).send("Faltan ingresar datos")
@@ -30,7 +32,7 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
             return res.status(404).send("El usuario no existe")
         } 
 
-        const isMatch = await bcrypt.compare(userData.password, user.password)
+        const isMatch: boolean = await bcrypt.compare(userData.password, user.password)
         
         if(isMatch){
              
