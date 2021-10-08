@@ -35,15 +35,8 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
         if(isMatch){
              
             const createdToken: string = createToken(userData)
-
-            const userUpdated = await prisma.user.update({
-                where: {id: user.id},
-                data: { 
-                    token: createdToken 
-                }
-            }) 
          
-            return res.status(200).json({userId :userUpdated.id, token: userUpdated.token})
+            return res.status(200).json(createdToken)
         }
       
         return res.status(400).json("El contraseña son incorrecta")

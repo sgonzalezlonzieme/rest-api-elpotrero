@@ -23,7 +23,6 @@ model User {
   password String //Fijarse en la documentación que posibilidades hay 
   player Player @relation(fields: [playerId], references: [id])
   playerId Int
-  token String?
 }
 
 model Player {
