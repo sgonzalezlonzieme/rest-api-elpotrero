@@ -36,10 +36,10 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
              
             const createdToken: string = createToken(userData)
          
-            return res.status(200).json(createdToken)
+            return res.status(200).json({...user, token: createdToken})
         }
       
-        return res.status(400).json("El contraseña son incorrecta")
+        return res.status(400).json("La contraseña es incorrecta")
 
 }
 
