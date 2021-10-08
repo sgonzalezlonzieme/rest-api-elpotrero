@@ -4,11 +4,12 @@ const prisma = new PrismaClient()
 import dateChange from '../timetable/dateChange'
 
 async function getFieldsAvailable (req: Express.Request, res: Express.Response){
-    const calendar = req.body
+    const calendar = req.params
+    const time = req.query
     let day = dateChange(calendar.day)
     // let hour = calendar.hour?.toString()
-    let hour = calendar.hour
-    
+    let hour = time.hour?.toString()
+  try{  
     if(hour && calendar){
         const fields = await prisma.field.findMany({
             include:{
@@ -37,6 +38,10 @@ async function getFieldsAvailable (req: Express.Request, res: Express.Response){
 
     res.json(fields)
     }
+}
+catch(e){
+    console.log('error en pedido',e)
+}
 } 
 
 export default getFieldsAvailable

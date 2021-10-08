@@ -23,6 +23,7 @@ model User {
   password String //Fijarse en la documentación que posibilidades hay 
   player Player @relation(fields: [playerId], references: [id])
   playerId Int
+  // timetable TimeTable[]
 }
 
 model Player {
@@ -80,6 +81,8 @@ model TimeTable{
   fieldId Int
   game Game? @relation(fields: [gameId], references: [id])
   gameId Int?
+  // user User @relation(fields: [userId], references: [id])
+  // userId Int
 }
 
 model Game {

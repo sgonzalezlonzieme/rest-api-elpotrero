@@ -10,7 +10,7 @@ const router = Express.Router();
 
 
 router.get('/',getFields);
-router.get('/available',getFieldsAvailable);
+router.get('/available/:day',getFieldsAvailable);
 router.post('/',postField);
 router.put('/:id',putField);
 router.delete('/:id',deleteField);

@@ -4,13 +4,13 @@ const prisma = new PrismaClient()
 
 async function getTimetable (req: Express.Request, res: Express.Response){
     
-    const fields = await prisma.timeTable.findMany({
+    const timetable = await prisma.timeTable.findMany({
         include:{
             field:true
         }
     })
     
-    res.json(fields)
+    res.json(timetable)
 } 
 
 export default getTimetable
