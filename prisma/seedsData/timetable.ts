@@ -29,11 +29,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"11/10/2021",
+    hour:"11:00",
+    duration:1,
+    field: {
+        connect:{
+            id:4
+        }
+    },
+    // game: 1
+},
+{
+    day:"11/10/2021",
     hour:"12:00",
     duration:1,
     field: {
         connect:{
             id:2
+        }
+    },
+    // game: 2
+},
+{
+    day:"11/10/2021",
+    hour:"12:00",
+    duration:1,
+    field: {
+        connect:{
+            id:5
         }
     },
     // game: 2
@@ -51,11 +73,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"11/10/2021",
+    hour:"13:00",
+    duration:1,
+    field: {
+        connect:{
+            id:6
+        }
+    },
+    // game: 5
+},
+{
+    day:"11/10/2021",
     hour:"14:00",
     duration:1,
     field: {
         connect:{
             id:3
+        }
+    },
+    // game: 3
+},
+{
+    day:"11/10/2021",
+    hour:"14:00",
+    duration:1,
+    field: {
+        connect:{
+            id:7
         }
     },
     // game: 3
@@ -73,6 +117,17 @@ const timetables:TimeTable[] = [
 },
 {
     day:"11/10/2021",
+    hour:"15:00",
+    duration:1,
+    field: {
+        connect:{
+            id:8
+        }
+    },
+    // game: 4
+},
+{
+    day:"11/10/2021",
     hour:"16:00",
     duration:1,
     field: {
@@ -84,11 +139,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"11/10/2021",
+    hour:"16:00",
+    duration:1,
+    field: {
+        connect:{
+            id:9
+        }
+    },
+    // game: 7
+},
+{
+    day:"11/10/2021",
     hour:"17:00",
     duration:1,
     field: {
         connect:{
             id:1
+        }
+    },
+    // game: 8
+},
+{
+    day:"11/10/2021",
+    hour:"17:00",
+    duration:1,
+    field: {
+        connect:{
+            id:10
         }
     },
     // game: 8
@@ -359,6 +436,17 @@ const timetables:TimeTable[] = [
 },
 {
     day:"13/10/2021",
+    hour:"15:00",
+    duration:1,
+    field: {
+        connect:{
+            id:4
+        }
+    },
+    // game: 32
+},
+{
+    day:"13/10/2021",
     hour:"16:00",
     duration:1,
     field: {
@@ -370,11 +458,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"13/10/2021",
+    hour:"16:00",
+    duration:1,
+    field: {
+        connect:{
+            id:5
+        }
+    },
+    // game: 33
+},
+{
+    day:"13/10/2021",
     hour:"17:00",
     duration:1,
     field: {
         connect:{
             id:1
+        }
+    },
+    // game: 34
+},
+{
+    day:"13/10/2021",
+    hour:"17:00",
+    duration:1,
+    field: {
+        connect:{
+            id:6
         }
     },
     // game: 34
@@ -404,11 +514,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"13/10/2021",
+    hour:"19:00",
+    duration:1,
+    field: {
+        connect:{
+            id:7
+        }
+    },
+    // game: 36
+},
+{
+    day:"13/10/2021",
     hour:"20:00",
     duration:1,
     field: {
         connect:{
             id:2
+        }
+    },
+    // game: 37
+},
+{
+    day:"13/10/2021",
+    hour:"20:00",
+    duration:1,
+    field: {
+        connect:{
+            id:8
         }
     },
     // game: 37
@@ -426,11 +558,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"13/10/2021",
+    hour:"21:00",
+    duration:1,
+    field: {
+        connect:{
+            id:9
+        }
+    },
+    // game: 38
+},
+{
+    day:"13/10/2021",
     hour:"22:00",
     duration:1,
     field: {
         connect:{
             id:2
+        }
+    },
+    // game: 39
+},
+{
+    day:"13/10/2021",
+    hour:"22:00",
+    duration:1,
+    field: {
+        connect:{
+            id:10
         }
     },
     // game: 39
@@ -679,11 +833,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"15/10/2021",
+    hour:"18:00",
+    duration:1,
+    field: {
+        connect:{
+            id:4
+        }
+    },
+    // game: 61
+},
+{
+    day:"15/10/2021",
     hour:"19:00",
     duration:1,
     field: {
         connect:{
             id:2
+        }
+    },
+    // game: 62
+},
+{
+    day:"15/10/2021",
+    hour:"19:00",
+    duration:1,
+    field: {
+        connect:{
+            id:5
         }
     },
     // game: 62
@@ -701,6 +877,17 @@ const timetables:TimeTable[] = [
 },
 {
     day:"15/10/2021",
+    hour:"20:00",
+    duration:1,
+    field: {
+        connect:{
+            id:6
+        }
+    },
+    // game: 63
+},
+{
+    day:"15/10/2021",
     hour:"21:00",
     duration:1,
     field: {
@@ -712,11 +899,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"15/10/2021",
+    hour:"21:00",
+    duration:1,
+    field: {
+        connect:{
+            id:7
+        }
+    },
+    // game: 64
+},
+{
+    day:"15/10/2021",
     hour:"22:00",
     duration:1,
     field: {
         connect:{
             id:1
+        }
+    },
+    // game: 65
+},
+{
+    day:"15/10/2021",
+    hour:"22:00",
+    duration:1,
+    field: {
+        connect:{
+            id:8
         }
     },
     // game: 65
@@ -734,11 +943,33 @@ const timetables:TimeTable[] = [
 },
 {
     day:"16/10/2021",
+    hour:"10:00",
+    duration:1,
+    field: {
+        connect:{
+            id:9
+        }
+    },
+    // game: 66
+},
+{
+    day:"16/10/2021",
     hour:"11:00",
     duration:1,
     field: {
         connect:{
             id:2
+        }
+    },
+    // game: 67
+},
+{
+    day:"16/10/2021",
+    hour:"11:00",
+    duration:1,
+    field: {
+        connect:{
+            id:10
         }
     },
     // game: 67

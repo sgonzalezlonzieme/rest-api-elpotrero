@@ -1,7 +1,7 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
-import dateChange from '../timetable/dateChange'
+import dateChange from '../timetable/functions/dateChange'
 
 async function getFieldsAvailable (req: Express.Request, res: Express.Response){
     const calendar = req.params
