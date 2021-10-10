@@ -10,6 +10,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: {
     //     create:{
     //         game: 6
@@ -25,6 +30,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 1
 },
 {
@@ -34,6 +44,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:4
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 1
@@ -47,6 +62,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 2
 },
 {
@@ -54,6 +74,11 @@ const timetables:TimeTable[] = [
     hour:"12:00",
     duration:1,
     field: {
+        connect:{
+            id:5
+        }
+    },
+    user: {
         connect:{
             id:5
         }
@@ -69,6 +94,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 5
 },
 {
@@ -80,6 +110,11 @@ const timetables:TimeTable[] = [
             id:6
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 5
 },
 {
@@ -87,6 +122,11 @@ const timetables:TimeTable[] = [
     hour:"14:00",
     duration:1,
     field: {
+        connect:{
+            id:3
+        }
+    },
+    user: {
         connect:{
             id:3
         }
@@ -102,6 +142,11 @@ const timetables:TimeTable[] = [
             id:7
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 3
 },
 {
@@ -111,6 +156,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 4
@@ -124,6 +174,11 @@ const timetables:TimeTable[] = [
             id:8
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 4
 },
 {
@@ -133,6 +188,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:2
         }
     },
     // game: 7
@@ -146,6 +206,11 @@ const timetables:TimeTable[] = [
             id:9
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 7
 },
 {
@@ -155,6 +220,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 8
@@ -168,6 +238,11 @@ const timetables:TimeTable[] = [
             id:10
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 8
 },
 {
@@ -177,6 +252,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:1
         }
     },
     // game: 9
@@ -190,6 +270,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 10
 },
 {
@@ -199,6 +284,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 11
@@ -212,7 +302,12 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
-    game: 12
+    user: {
+        connect:{
+            id:4
+        }
+    },
+    // game: 12
 },
 {
     day:"11/10/2021",
@@ -223,6 +318,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 13
 },
 {
@@ -230,6 +330,11 @@ const timetables:TimeTable[] = [
     hour:"10:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -245,6 +350,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 15
 },
 {
@@ -254,6 +364,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 16
@@ -267,6 +382,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 17
 },
 {
@@ -276,6 +396,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 18
@@ -289,6 +414,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 19
 },
 {
@@ -298,6 +428,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:2
         }
     },
     // game: 20
@@ -311,6 +446,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 21
 },
 {
@@ -320,6 +460,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 22
@@ -333,6 +478,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 23
 },
 {
@@ -342,6 +492,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:1
         }
     },
     // game: 24
@@ -355,6 +510,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 25
 },
 {
@@ -362,6 +522,11 @@ const timetables:TimeTable[] = [
     hour:"22:00",
     duration:1,
     field: {
+        connect:{
+            id:3
+        }
+    },
+    user: {
         connect:{
             id:3
         }
@@ -377,6 +542,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 27
 },
 {
@@ -386,6 +556,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 28
@@ -399,6 +574,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 29
 },
 {
@@ -408,6 +588,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:2
         }
     },
     // game: 30
@@ -421,6 +606,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 31
 },
 {
@@ -430,6 +620,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 32
@@ -443,6 +638,11 @@ const timetables:TimeTable[] = [
             id:4
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 32
 },
 {
@@ -450,6 +650,11 @@ const timetables:TimeTable[] = [
     hour:"16:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -465,6 +670,11 @@ const timetables:TimeTable[] = [
             id:5
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 33
 },
 {
@@ -474,6 +684,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 34
@@ -487,6 +702,11 @@ const timetables:TimeTable[] = [
             id:6
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 34
 },
 {
@@ -496,6 +716,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 35
@@ -510,6 +735,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 36
 },
 {
@@ -521,6 +751,11 @@ const timetables:TimeTable[] = [
             id:7
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 36
 },
 {
@@ -530,6 +765,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 37
@@ -543,6 +783,11 @@ const timetables:TimeTable[] = [
             id:8
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 37
 },
 {
@@ -552,6 +797,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 38
@@ -565,6 +815,11 @@ const timetables:TimeTable[] = [
             id:9
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 38
 },
 {
@@ -572,6 +827,11 @@ const timetables:TimeTable[] = [
     hour:"22:00",
     duration:1,
     field: {
+        connect:{
+            id:2
+        }
+    },
+    user: {
         connect:{
             id:2
         }
@@ -587,6 +847,11 @@ const timetables:TimeTable[] = [
             id:10
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 39
 },
 {
@@ -596,6 +861,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 40
@@ -609,6 +879,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 41
 },
 {
@@ -618,6 +893,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:1
         }
     },
     // game: 42
@@ -631,6 +911,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 43
 },
 {
@@ -638,6 +923,11 @@ const timetables:TimeTable[] = [
     hour:"14:00",
     duration:1,
     field: {
+        connect:{
+            id:3
+        }
+    },
+    user: {
         connect:{
             id:3
         }
@@ -653,6 +943,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 45
 },
 {
@@ -662,6 +957,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 46
@@ -675,6 +975,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 47
 },
 {
@@ -682,6 +987,11 @@ const timetables:TimeTable[] = [
     hour:"18:00",
     duration:1,
     field: {
+        connect:{
+            id:2
+        }
+    },
+    user: {
         connect:{
             id:2
         }
@@ -697,6 +1007,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 49
 },
 {
@@ -706,6 +1021,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 50
@@ -719,6 +1039,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 51
 },
 {
@@ -726,6 +1051,11 @@ const timetables:TimeTable[] = [
     hour:"22:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -741,6 +1071,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 53
 },
 {
@@ -750,6 +1085,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 54
@@ -763,6 +1103,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 55
 },
 {
@@ -774,6 +1119,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 56
 },
 {
@@ -781,6 +1131,11 @@ const timetables:TimeTable[] = [
     hour:"14:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -796,6 +1151,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 58
 },
 {
@@ -805,6 +1165,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 59
@@ -818,6 +1183,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 60
 },
 {
@@ -827,6 +1197,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 61
@@ -840,6 +1215,11 @@ const timetables:TimeTable[] = [
             id:4
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 61
 },
 {
@@ -847,6 +1227,11 @@ const timetables:TimeTable[] = [
     hour:"19:00",
     duration:1,
     field: {
+        connect:{
+            id:2
+        }
+    },
+    user: {
         connect:{
             id:2
         }
@@ -862,6 +1247,11 @@ const timetables:TimeTable[] = [
             id:5
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 62
 },
 {
@@ -871,6 +1261,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 63
@@ -884,6 +1279,11 @@ const timetables:TimeTable[] = [
             id:6
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 63
 },
 {
@@ -891,6 +1291,11 @@ const timetables:TimeTable[] = [
     hour:"21:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -906,6 +1311,11 @@ const timetables:TimeTable[] = [
             id:7
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 64
 },
 {
@@ -915,6 +1325,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 65
@@ -928,6 +1343,11 @@ const timetables:TimeTable[] = [
             id:8
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 65
 },
 {
@@ -937,6 +1357,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 66
@@ -950,6 +1375,11 @@ const timetables:TimeTable[] = [
             id:9
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 66
 },
 {
@@ -957,6 +1387,11 @@ const timetables:TimeTable[] = [
     hour:"11:00",
     duration:1,
     field: {
+        connect:{
+            id:2
+        }
+    },
+    user: {
         connect:{
             id:2
         }
@@ -972,6 +1407,11 @@ const timetables:TimeTable[] = [
             id:10
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 67
 },
 {
@@ -981,6 +1421,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 68
@@ -994,6 +1439,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 69
 },
 {
@@ -1001,6 +1451,11 @@ const timetables:TimeTable[] = [
     hour:"14:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -1016,6 +1471,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 71
 },
 {
@@ -1025,6 +1485,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:2
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 72
@@ -1038,6 +1503,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 73
 },
 {
@@ -1047,6 +1517,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:5
         }
     },
     // game: 74
@@ -1060,6 +1535,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:1
+        }
+    },
     // game: 75
 },
 {
@@ -1069,6 +1549,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:3
+        }
+    },
+    user: {
+        connect:{
+            id:2
         }
     },
     // game: 76
@@ -1082,6 +1567,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:3
+        }
+    },
     // game: 77
 },
 {
@@ -1091,6 +1581,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:4
         }
     },
     // game: 78
@@ -1104,6 +1599,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 79
 },
 {
@@ -1111,6 +1611,11 @@ const timetables:TimeTable[] = [
     hour:"11:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -1126,6 +1631,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 81
 
 },
@@ -1136,6 +1646,11 @@ const timetables:TimeTable[] = [
     field: {
         connect:{
             id:1
+        }
+    },
+    user: {
+        connect:{
+            id:3
         }
     },
     // game: 82
@@ -1149,7 +1664,12 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
-    game: 83
+    user: {
+        connect:{
+            id:4
+        }
+    },
+    // game: 83
 },
 {
     day:"17/10/2021",
@@ -1160,6 +1680,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 84
 },
 {
@@ -1167,6 +1692,11 @@ const timetables:TimeTable[] = [
     hour:"16:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -1182,6 +1712,11 @@ const timetables:TimeTable[] = [
             id:2
         }
     },
+    user: {
+        connect:{
+            id:2
+        }
+    },
     // game: 86
 },
 {
@@ -1189,6 +1724,11 @@ const timetables:TimeTable[] = [
     hour:"18:00",
     duration:1,
     field: {
+        connect:{
+            id:3
+        }
+    },
+    user: {
         connect:{
             id:3
         }
@@ -1204,6 +1744,11 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
+    user: {
+        connect:{
+            id:4
+        }
+    },
     // game: 88
 },
 {
@@ -1215,6 +1760,11 @@ const timetables:TimeTable[] = [
             id:3
         }
     },
+    user: {
+        connect:{
+            id:5
+        }
+    },
     // game: 89
 },
 {
@@ -1222,6 +1772,11 @@ const timetables:TimeTable[] = [
     hour:"21:00",
     duration:1,
     field: {
+        connect:{
+            id:1
+        }
+    },
+    user: {
         connect:{
             id:1
         }
@@ -1237,7 +1792,12 @@ const timetables:TimeTable[] = [
             id:1
         }
     },
-    game: 91
+    user: {
+        connect:{
+            id:2
+        }
+    },
+    // game: 91
 }
 ]
 

@@ -4,9 +4,12 @@ const prisma = new PrismaClient()
 
 async function getTimetable (req: Express.Request, res: Express.Response){
     
-    const timetable = await prisma.timeTable.findMany({
+    const timetable = await prisma.timeTable.findFirst({
         include:{
             field:true
+        },
+        orderBy:{
+            id:'desc'
         }
     })
     
