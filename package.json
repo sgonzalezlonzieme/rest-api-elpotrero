@@ -24,6 +24,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "express": "^4.17.1",
+    "mercadopago": "^1.5.8",
     "morgan": "^1.10.0"
   }
 }

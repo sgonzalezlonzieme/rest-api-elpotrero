@@ -5,13 +5,14 @@ import userRoute from './user';
 import playerRoute from './player';
 import teamRoute from './team'
 import timetableRoute from './timetable'
+import checkoutRoute from './checkout';
 
 router.use('/user', userRoute);
 router.use('/player', playerRoute);
 router.use('/fields', fieldRoute)
 router.use('/team', teamRoute)
 router.use('/timetable', timetableRoute) 
-
+router.use('/checkout', checkoutRoute)
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);

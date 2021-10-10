@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
 }
 
 generator client {
@@ -11,87 +11,85 @@ generator client {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  name String 
-  userName String @unique
-  gender Gender?
-  dni Int @unique
-  birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
-  cellphone Int 
-  mail String @unique//Ver si es unique para el ingreso o solo por name
-  image String?
-  password String //Fijarse en la documentación que posibilidades hay 
-  player Player @relation(fields: [playerId], references: [id])
-  playerId Int
+  id        Int     @id @default(autoincrement())
+  name      String
+  userName  String  @unique
+  gender    Gender?
+  dni       Int     @unique
+  birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
+  cellphone Int
+  mail      String  @unique //Ver si es unique para el ingreso o solo por name
+  image     String?
+  password  String //Fijarse en la documentación que posibilidades hay 
+  player    Player  @relation(fields: [playerId], references: [id])
+  playerId  Int
   // timetable TimeTable[]
 }
 
 model Player {
-  id Int @id @default(autoincrement())
-  position Position 
-  qualification Int @default(3)
-  votes Int @default(1)
-  user User[] 
-  team Team? @relation(fields: [teamId], references: [id])
-  teamId Int? 
+  id            Int      @id @default(autoincrement())
+  position      Position
+  qualification Int      @default(3)
+  votes         Int      @default(1)
+  user          User[]
+  team          Team?    @relation(fields: [teamId], references: [id])
+  teamId        Int?
 }
 
 model Team {
-  id Int @id @default(autoincrement())
-  name String
-  image String?
-  qualification Int @default(3)
-  votes Int @default(1)
-  player Player[] //pasarlo a plural si prisma lo permite
-  game Game[] //pasarlo a plural si prisma lo permite
+  id            Int      @id @default(autoincrement())
+  name          String
+  image         String?
+  qualification Int      @default(3)
+  votes         Int      @default(1)
+  player        Player[] //pasarlo a plural si prisma lo permite
+  game          Game[] //pasarlo a plural si prisma lo permite
 }
 
-
 model Field {
-  id Int @id @default(autoincrement())
-  name String
-  address String
-  inicialTime String // cambio de modelo se agrego inicialTime y endTime
-  endTime String
-  cost Int //Ver si se puede poner con signo de peso antes del Int
-  image String
-  description String?
-  timetable TimeTable[]
-  qualification Int @default(3)
-  votes Int @default(1)
+  id                   Int                   @id @default(autoincrement())
+  name                 String
+  address              String
+  inicialTime          String // cambio de modelo se agrego inicialTime y endTime
+  endTime              String
+  cost                 Int //Ver si se puede poner con signo de peso antes del Int
+  image                String
+  description          String?
+  timetable            TimeTable[]
+  qualification        Int                   @default(3)
+  votes                Int                   @default(1)
   fieldCharacteristics FieldCharacteristics?
 }
 
 model FieldCharacteristics {
-  id Int @id @default(autoincrement())
-  floorType FloorType
-  light Boolean 
-  soccerField Int @default(5)
-  roofed Boolean
-  field Field @relation(fields: [fieldId], references: [id])
-  fieldId Int
+  id          Int       @id @default(autoincrement())
+  floorType   FloorType
+  light       Boolean
+  soccerField Int       @default(5)
+  roofed      Boolean
+  field       Field     @relation(fields: [fieldId], references: [id])
+  fieldId     Int       @unique
 }
 
-model TimeTable{
-  id Int @id @default(autoincrement())
-  day String
-  hour String
-  duration Int @default(1)
-  field Field @relation(fields: [fieldId], references: [id])
-  fieldId Int
-  game Game? @relation(fields: [gameId], references: [id])
-  gameId Int?
+model TimeTable {
+  id       Int    @id @default(autoincrement())
+  day      String
+  hour     String
+  duration Int    @default(1)
+  field    Field  @relation(fields: [fieldId], references: [id])
+  fieldId  Int
+  game     Game?  @relation(fields: [gameId], references: [id])
+  gameId   Int?   @unique
   // user User @relation(fields: [userId], references: [id])
   // userId Int
 }
 
 model Game {
-  id Int @id @default(autoincrement())
-  team Team @relation(fields: [teamId], references: [id])
-  teamId Int
+  id        Int        @id @default(autoincrement())
+  team      Team       @relation(fields: [teamId], references: [id])
+  teamId    Int
   timetable TimeTable?
 }
-
 
 enum Position {
   GOALKEEPER
@@ -101,13 +99,13 @@ enum Position {
 }
 
 enum FloorType {
-   SYNTHETIC
-   GRASS
-   CEMENT 
+  SYNTHETIC
+  GRASS
+  CEMENT
 }
 
 enum Gender {
-  FEMALE 
+  FEMALE
   MALE
   UNDEFINED
 }
