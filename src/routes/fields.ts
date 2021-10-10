@@ -9,11 +9,11 @@ import deleteField from '../controllers/fields/deleteFields'
 const router = Express.Router();
 
 
-router.get('/',getFields);
-router.get('/available/:day',getFieldsAvailable);
-router.post('/',postField);
-router.put('/:id',putField);
-router.delete('/:id',deleteField);
+router.get('/', getFields);
+router.get('/available/:day', getFieldsAvailable);
+router.post('/', postField);
+router.put('/:id', putField);
+router.delete('/:id', deleteField);
 
 
 // module.exports = router;

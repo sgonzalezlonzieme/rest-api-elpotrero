@@ -25,7 +25,7 @@ async function main() {
         });
     })
 
-    timetables.forEach(async(timetable) => {
+    timetables.forEach(async(timetable: any) => {
       await prisma.timeTable.create({
           data: timetable
       });

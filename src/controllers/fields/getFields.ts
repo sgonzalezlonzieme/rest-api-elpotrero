@@ -1,7 +1,5 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
-import { isUint8ClampedArray } from 'util/types'
-import { time } from 'console'
 const prisma = new PrismaClient()
 
 async function getFields (req: Express.Request, res: Express.Response){

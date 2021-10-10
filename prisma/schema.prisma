@@ -11,7 +11,6 @@ generator client {
 }
 
 model User {
-<<<<<<< HEAD
   id        Int     @id @default(autoincrement())
   name      String
   userName  String  @unique
@@ -25,20 +24,6 @@ model User {
   player    Player  @relation(fields: [playerId], references: [id])
   playerId  Int
   // timetable TimeTable[]
-=======
-  id Int @id @default(autoincrement())
-  name String 
-  userName String @unique
-  gender Gender?
-  dni Int @unique
-  birthday String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
-  cellphone Int 
-  mail String @unique//Cambiar a email
-  image String?
-  password String //Fijarse en la documentación que posibilidades hay 
-  player Player @relation(fields: [playerId], references: [id])
-  playerId Int
->>>>>>> ramaSanti
 }
 
 model Player {
