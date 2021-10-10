@@ -2,12 +2,50 @@ import Express from 'express'
 import  User  from './type'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+import bcrypt from 'bcrypt'
 
 async function postUser (req: Express.Request, res: Express.Response){
+      
     try{
         const user: User = req.body
+        
+        const userMail = await prisma.user.findFirst({
+            where: {
+                mail: user.mail
+            } 
+        })
          
-        const newUser = await prisma.user.create({
+        if(userMail){
+            return res.send('El email ya existe')
+        }
+
+        const userDni = await prisma.user.findFirst({
+            where: {
+                dni: user.dni
+            } 
+        })
+         
+        if(userDni){
+            return res.send('El dni ya existe')
+        }
+
+        const userName = await prisma.user.findFirst({
+            where: {
+                userName: user.userName
+            } 
+        })
+         
+        if(userName){
+            return res.send('El nombre de usuario ya existe')
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(user.password, salt)
+        user.password = hash
+
+        //await bcrypt.compare(user.password, user.password)
+
+        await prisma.user.create({
             data: {
                 name: user.name,
                 userName: user.userName,
@@ -22,17 +60,18 @@ async function postUser (req: Express.Request, res: Express.Response){
                     create: {
                         position: user.player.position,
                         qualification: user.player.qualification,
+                        // votes: user.player.votes
                     }
                 }
             }
         })
 
-        res.json(newUser)
+        res.json('Se registro exitosamente')
 
     }catch(error){
+
         res.status(404).send({mensaje: "Error en el post de user", error: error})
     }
-   
 }
 
 export default postUser
