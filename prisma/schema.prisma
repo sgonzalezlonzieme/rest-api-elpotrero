@@ -23,7 +23,6 @@ model User {
   password  String //Fijarse en la documentación que posibilidades hay 
   player    Player  @relation(fields: [playerId], references: [id])
   playerId  Int
-  orders    Order[]
 }
 
 model Player {
@@ -86,23 +85,6 @@ model Game {
   team      Team       @relation(fields: [teamId], references: [id])
   teamId    Int
   timetable TimeTable?
-}
-
-model Order {
-  id                  Int     @id @default(autoincrement())
-  collection_id       String
-  collection_status   String
-  payment_id          String
-  status              String
-  external_reference  String?
-  payment_type        String
-  merchant_order_id   String
-  preference_id       String
-  site_id             String
-  processing_mode     String
-  merchant_account_id String?
-  user                User    @relation(fields: [userId], references: [id])
-  userId              Int
 }
 
 enum Position {

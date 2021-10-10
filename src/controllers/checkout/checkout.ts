@@ -3,14 +3,12 @@ const mercadopago = require('mercadopago');
 
 // Agrega credenciales
 mercadopago.configure({
-	//access_token : env("ACCESS_TOKEN")
 	access_token:
 		'TEST-6623451607855904-111502-83c610c2165674e9bba665cfb4aa6b0c-672708410'
 });
 
 function checkout (req: any, res: any){
   // Crea un objeto de preferencia
-	//console.log(req.body)
 	let preference = {
 		items: [
 			{
@@ -20,8 +18,10 @@ function checkout (req: any, res: any){
 			}
 		],
 		back_urls: {
-			success: 'http://localhost:3001/checkout/success',
-			failure: 'http://google.com'
+			success: 'http://google.com', //cambiar
+			//success: `http://localhost:3001/checkout/success/${req.body.userId}/${req.body.timeTableId}`,
+			failure: 'http://google.com', //cambiar
+			//failure: `http://localhost:3001/timetable/${req.body.timeTableId}`,
 			//pending: 'http://google.com'
 		},
 		auto_return: 'approved',
