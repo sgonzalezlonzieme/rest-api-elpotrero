@@ -8,7 +8,7 @@ import passport from 'passport'
 const router = Express.Router();
 
 
-router.get('/', passport.authenticate('jwt', { session: false }), getTimetable);
+router.get('/:id', passport.authenticate('jwt', { session: false }), getTimetable);
 router.post('/', passport.authenticate('jwt', { session: false }), postTimetable);
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteTimetable);
 
