@@ -13,7 +13,7 @@ generator client {
 model User {
   id        Int     @id @default(autoincrement())
   name      String
-  userName  String  @unique
+  userName  String  
   gender    Gender?
   dni       Int     @unique
   birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
