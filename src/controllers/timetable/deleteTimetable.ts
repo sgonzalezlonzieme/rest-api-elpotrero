@@ -1,25 +1,17 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
+import deleteTime from './functions/deleteTime'
 
 
 async function deleteTimetable (req: Express.Request, res: Express.Response){
-    try{
-        let id = req.params.id
-        let timetableId = parseInt(id)
-        
-        await prisma.timeTable.delete({
-            where:{
-                id:timetableId
-            },
 
-        })
+    let id = req.params.id
+    let timetableId = parseInt(id)
 
-       res.json("timetable was successfully deleted")
-    }
-    catch(e){
-        console.log('error de eliminacion de cancha', e)
-    }
+    deleteTime(timetableId)
+
+    res.json("timetable was successfully deleted")
 
 } 
 
