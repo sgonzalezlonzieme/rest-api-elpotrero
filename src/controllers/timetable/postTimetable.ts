@@ -24,8 +24,8 @@ async function postTimetable (req: Express.Request, res: Express.Response){
                     connect:{
                         id: timetable.user
                     }
-                }
-                // gameId: timetable.game
+                },
+                gameId: timetable.game
             },
 
         })

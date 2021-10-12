@@ -11,6 +11,7 @@ const router = Express.Router();
 router.get('/:id', passport.authenticate('jwt', { session: false }), getTimetable);
 router.post('/', passport.authenticate('jwt', { session: false }), postTimetable);
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteTimetable);
+router.delete('/mercadopago/:id',  passport.authenticate('jwt', { session: false }), deleteTimetable);
 
 
 // module.exports = router;

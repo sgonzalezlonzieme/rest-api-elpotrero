@@ -1,0 +1,12 @@
+[
+  {
+    "APRO": "Pago aprobado",
+    "CONT": "Pago pendiente",
+    "OTHE": "Rechazado por error general",
+    "CALL": "Rechazado con validación para autorizar",
+    "FUND": "Rechazado por monto insuficiente",
+    "SECU": "Rechazado por código de seguridad inválido",
+    "EXPI": "Rechazado por problema con la fecha de expiración",
+    "FORM": "Rechazado por error en formulario"
+  }
+]

@@ -4,16 +4,18 @@ import getFieldsAvailable from '../controllers/fields/getFieldsAvailable'
 import postField from '../controllers/fields/postField'
 import putField from '../controllers/fields/putField'
 import deleteField from '../controllers/fields/deleteFields'
+import passport from 'passport'
 
 // const { getActivities, addActivity } = require('../controllers');
 const router = Express.Router();
 
 
 router.get('/', getFields);
-router.get('/available/:day', getFieldsAvailable);
-router.post('/', postField);
-router.put('/:id', putField);
-router.delete('/:id', deleteField);
+router.get('/available/:day', passport.authenticate('jwt', { session: false }), getFieldsAvailable);
+router.post('/', passport.authenticate('jwt', { session: false }), postField);
+router.put('/:id', passport.authenticate('jwt', { session: false }), putField);
+router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteField);
+
 
 
 // module.exports = router;

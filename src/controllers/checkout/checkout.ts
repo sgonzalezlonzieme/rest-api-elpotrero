@@ -18,9 +18,9 @@ function checkout (req: any, res: any){
 			}
 		],
 		back_urls: {
-			success: 'http://google.com', //cambiar
+			success: 'http://localhost:8080/success', //cambiar
 			//success: `http://localhost:3001/checkout/success/${req.body.userId}/${req.body.timeTableId}`,
-			failure: 'http://google.com', //cambiar
+			failure: `http://localhost:8080/failed`, //cambiar
 			//failure: `http://localhost:3001/timetable/${req.body.timeTableId}`,
 			//pending: 'http://google.com'
 		},

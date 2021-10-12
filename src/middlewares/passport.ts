@@ -20,5 +20,5 @@ export default new Strategy(options, async (payload, done) => {
         if(user){
             return done(null, user)
         }
-        return done(null, false)
+        return done(null, false, { message: 'Usted no está autorizado'});
 })

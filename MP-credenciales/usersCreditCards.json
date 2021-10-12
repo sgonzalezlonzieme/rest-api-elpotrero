@@ -1,0 +1,20 @@
+[
+  {
+    "tarjeta": "Mastercard",
+    "numero": "5031 7557 3453 0604",
+    "codigoSeguridad": "123",
+    "fechaVencimiento": "11/25"
+  },
+  {
+    "tarjeta": "Visa",
+    "numero": "4509 9535 6623 3704",
+    "codigoSeguridad": "123",
+    "fechaVencimiento": "11/25"
+  },
+  {
+    "tarjeta": "American Express",
+    "numero": "3711 803032 57522",
+    "codigoSeguridad": "1234",
+    "fechaVencimiento": "11/25"
+  }
+]

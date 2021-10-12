@@ -17,6 +17,7 @@ router.use('/team', teamRoute)
 router.use('/auth', loginRoute)
 
 
+
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
 
