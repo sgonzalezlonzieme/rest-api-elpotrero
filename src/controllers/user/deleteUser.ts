@@ -8,6 +8,12 @@ async function deleteUser (req: Express.Request, res: Express.Response){
         let id = req.params.id
         let userId = parseInt(id)
 
+        await prisma.timeTable.deleteMany({
+            where:{
+                userId: userId
+            },
+
+        })
         await prisma.user.delete({
             where:{
                 id: userId
