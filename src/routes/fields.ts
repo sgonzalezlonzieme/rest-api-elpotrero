@@ -11,7 +11,7 @@ const router = Express.Router();
 
 
 router.get('/', getFields);
-router.get('/available/:day', passport.authenticate('jwt', { session: false }), getFieldsAvailable);
+router.get('/available/:day', getFieldsAvailable);
 router.post('/', passport.authenticate('jwt', { session: false }), postField);
 router.put('/:id', passport.authenticate('jwt', { session: false }), putField);
 router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteField);

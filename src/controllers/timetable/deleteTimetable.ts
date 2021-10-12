@@ -1,8 +1,8 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
-const prisma = new PrismaClient()
 import deleteTime from './functions/deleteTime'
 
+const prisma = new PrismaClient()
 
 async function deleteTimetable (req: Express.Request, res: Express.Response){
 
