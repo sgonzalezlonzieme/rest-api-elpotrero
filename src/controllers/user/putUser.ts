@@ -34,7 +34,7 @@ async function putUser (req: Express.Request, res: Express.Response){
             }
 
         })
-       res.json(updateUser)
+       return res.json(updateUser)
     }
     catch(e){
         console.log('error de actualizacion de cancha', e)

@@ -29,7 +29,7 @@ async function deleteUser (req: Express.Request, res: Express.Response){
         })
 
 
-       res.json("user/player was successfully eliminated")
+      return res.json("user/player was successfully eliminated")
     }
     catch(e){
         console.log('error de eliminacion de cancha', e)

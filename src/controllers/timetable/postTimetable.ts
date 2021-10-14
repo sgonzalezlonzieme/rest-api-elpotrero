@@ -26,12 +26,12 @@ async function postTimetable (req: Express.Request, res: Express.Response){
                         id: timetable.user
                     }
                 },
-                gameId: timetable.game
+                // gameId: timetable.game
             },
 
         });
 
-       res.json(newTimetable);
+      return res.json(newTimetable);
     }
     catch(e){
         console.log('error de carga de reserva de cancha', e)

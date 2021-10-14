@@ -34,7 +34,8 @@ model Player {
   votes         Int      @default(1)
   available     Boolean  @default(false)
   user          User[]
-  team          Team[]   @relation("Teams_Players")
+  team          Team[]   @relation("Players_Teams", references:[id])
+  // team          Teams_Players[]
 }
 
 model Team {
@@ -44,11 +45,20 @@ model Team {
   qualification Int      @default(3)
   votes         Int      @default(1)
   available     Boolean  @default(true)
-  user          User  @relation(fields: [userId], references: [id])
+  user          User     @relation(fields: [userId], references: [id])
   userId        Int
-  player        Player[]  @relation("Teams_Players")//pasarlo a plural si prisma lo permite
+  player        Player[] @relation("Players_Teams", references:[id])
+  // player        Teams_Players[]  //pasarlo a plural si prisma lo permite
   // game          Game[] //pasarlo a plural si prisma lo permite
 }
+
+// model Teams_Players{
+//   id            Int      @id @default(autoincrement())
+//   player        Player   @relation(fields: [playerId], references: [id])
+//   playerId      Int
+//   team          Team   @relation(fields: [teamId], references: [id])
+//   teamId        Int
+// }
 
 model Field {
   id                   Int                   @id @default(autoincrement())
@@ -84,8 +94,8 @@ model TimeTable {
   fieldId  Int
   // game     Game?  @relation(fields: [gameId], references: [id])
   // gameId   Int?   @unique
-  user User @relation(fields: [userId], references: [id])
-  userId Int
+  user     User   @relation(fields: [userId], references: [id])
+  userId   Int
 }
 
 // model Game {

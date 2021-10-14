@@ -18,7 +18,7 @@ async function getTimetable (req: Express.Request, res: Express.Response){
         }
     });
     
-    res.json(timetable);
+   return res.json(timetable);
 }; 
 
 export default getTimetable;
