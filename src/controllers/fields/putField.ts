@@ -6,9 +6,9 @@ import Field from './type'
 
 async function putField (req: Express.Request, res: Express.Response){
     try{
-        let id = req.params.id
-        let fieldId = parseInt(id)
-        const field: Field = req.body
+        let fieldId = parseInt(req.params.id);
+    
+        const field: Field = req.body;
 
         const updateField = await prisma.field.update({
             where:{
@@ -18,8 +18,9 @@ async function putField (req: Express.Request, res: Express.Response){
                 name:field.name
             }
 
-        })
-       res.json(updateField)
+        });
+        
+       res.json(updateField);
     }
     catch(e){
         console.log('error de actualizacion de cancha', e)
@@ -27,4 +28,4 @@ async function putField (req: Express.Request, res: Express.Response){
 
 } 
 
-export default putField
+export default putField;
