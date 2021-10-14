@@ -11,12 +11,12 @@ async function deleteTime (timetableId:number){
                 id:timetableId
             },
 
-        })
+        });
     }
     catch(e){
         console.log('error in deleting timetable', e)
     }
-    }
+    };
 
 
-export default deleteTime
+export default deleteTime;

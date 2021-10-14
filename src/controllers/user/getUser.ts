@@ -10,6 +10,9 @@ async function getUser (req: Express.Request, res: Express.Response){
         const user = await prisma.user.findUnique({
             where:{
                 id: parseInt(id)
+            },
+            include: {
+                player: true,
             }
         }) 
         res.json(user) 

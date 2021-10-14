@@ -4,14 +4,13 @@ import deleteTime from './functions/deleteTime'
 const prisma = new PrismaClient()
 
 
-async function deleteTimetable (req: Express.Request, res: Express.Response){
+async function failedTimetable (req: Express.Request, res: Express.Response){
 
-    let id = req.params.id
-    let timetableId = parseInt(id)
+    let timetableId = parseInt(req.params.id);
 
-    deleteTime(timetableId)
+    deleteTime(timetableId);
 
-    res.redirect(`http://localhost:3001/failed`)
-} 
+    res.redirect(`http://localhost:3001/failed`);
+}; 
 
-export default deleteTimetable
+export default failedTimetable;

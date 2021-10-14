@@ -28,6 +28,7 @@ async function putUser (req: Express.Request, res: Express.Response){
                     update: {
                         position: user.player.position,
                         qualification: user.player.qualification,
+                        votes: user.player.votes
                     }
                 }
             }

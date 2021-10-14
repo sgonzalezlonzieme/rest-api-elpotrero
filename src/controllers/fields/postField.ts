@@ -6,9 +6,10 @@ import Field from './type'
 
 async function postField (req: Express.Request, res: Express.Response){
     try{
-        const field: Field = req.body
+        const field: Field = req.body;
 
         const newField = await prisma.field.create({
+
             data:{
                 name: field.name,
                 address: field.address,
@@ -26,8 +27,9 @@ async function postField (req: Express.Request, res: Express.Response){
                 }
             },
 
-        })
-       res.json(newField)
+        });
+
+       res.json(newField);
     }
     catch(e){
         console.log('error de carga de nueva cancha', e)
@@ -35,4 +37,4 @@ async function postField (req: Express.Request, res: Express.Response){
 
 } 
 
-export default postField
+export default postField;
