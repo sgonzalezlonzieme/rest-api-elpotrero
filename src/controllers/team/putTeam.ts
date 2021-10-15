@@ -8,7 +8,20 @@ async function putTeam (req: Express.Request, res: Express.Response){
     try{
         let teamId = parseInt(req.params.id)
         const team: Team = req.body
+        if(Object.keys(team).length === 1){
 
+            const updateTeam = await prisma.team.update({
+                where:{
+                    id:teamId
+                },
+                data:{
+                    available: team.available,
+                }
+    
+            })
+            return res.json(updateTeam)
+        }
+        else{
         const updateTeam = await prisma.team.update({
             where:{
                 id:teamId
@@ -23,7 +36,8 @@ async function putTeam (req: Express.Request, res: Express.Response){
             }
 
         })
-       return res.json(updateTeam)
+        return res.json(updateTeam)
+        }
     }
     catch(e){
         console.log('error de actualizacion de cancha', e)
