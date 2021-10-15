@@ -2,16 +2,22 @@ import Express from 'express'
 import morgan from 'morgan'
 import router from './routes'
 import passport from 'passport'
-import passportMiddleware from './middlewares/passport'
+import LocalStrategy from './passport/localStrategy'
+import GoogleStrategy from './passport/googleStrategy'
+var cookieParser = require('cookie-parser');
 
 const app = Express()
-
+app.use(cookieParser({
+  maxAge: 24 * 60 * 60 * 1000,
+  keys: "Secret"
+}));
 // middlewares
 app.use(morgan('tiny'))
 app.use(Express.json())
 app.use(Express.urlencoded({ extended: false }))
 app.use(passport.initialize())
-passport.use(passportMiddleware)
+passport.use(LocalStrategy)
+passport.use(GoogleStrategy)
 
 
 app.use((req, res, next) => {

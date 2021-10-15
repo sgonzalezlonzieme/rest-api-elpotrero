@@ -9,12 +9,12 @@ import {TokenData, LoginData} from './type'
 
 function createToken(user: TokenData){
     //CONFIGURAR EL TIEMPO DE SESIÓN
-      return jwt.sign({id: user.id, password: user.password}, config.jwtSecret,
+      return jwt.sign({id: user.id}, config.jwtSecret,
         { expiresIn: "60m"})
 }
 
 async function postLogin(req: Express.Request, res: Express.Response ) {
-        
+        console.log(req)
         //type userLogin
         const userData: LoginData = req.body  
 
@@ -33,6 +33,7 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
         } 
 
         const isMatch: boolean = await bcrypt.compare(userData.password, user.password)
+        
         
         if(isMatch){
              

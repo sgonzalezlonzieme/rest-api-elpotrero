@@ -1,0 +1,9 @@
+{"web":{
+    "client_id":"653542961605-hhhqumktukgektmpv755mlmm9cec1ncd.apps.googleusercontent.com",
+    "client_secret":"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",
+    "project_id":"elpotrero",
+    "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+    "token_uri":"https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+    "redirect_uris":["http://localhost:8080"]
+    }}
