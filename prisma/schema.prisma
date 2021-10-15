@@ -12,7 +12,7 @@ generator client {
 
 model User {
   id        Int     @id @default(autoincrement())
-  name      String  @default("Catu")
+  name      String @default("Catu")
   userName  String  @default("Catu123")
   gender    Gender?
   dni       Int     @unique @default(1234)
