@@ -5,6 +5,7 @@ import getTeam from '../controllers/team/getTeamId';
 import getTeamAvailable from '../controllers/team/getTeamAvailable';
 import getTeamUser from '../controllers/team/getTeamUser'
 import putTeam from '../controllers/team/putTeam';
+import deleteTeam from '../controllers/team/deleteTeam';
 import passport from 'passport'
 
 
@@ -13,6 +14,7 @@ router.get('/available', getTeamAvailable);
 router.get('/', getTeamUser);
 router.get('/team/:id', getTeam);
 router.put('/team/:id', putTeam);
+router.delete('/team/:id', deleteTeam);
 
 
 export default router
