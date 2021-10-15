@@ -10,7 +10,7 @@ async function failedTimetable (req: Express.Request, res: Express.Response){
 
     deleteTime(timetableId);
 
-    res.redirect(`http://localhost:3001/failed`);
+   return res.redirect(`http://localhost:3001/failed`);
 }; 
 
 export default failedTimetable;

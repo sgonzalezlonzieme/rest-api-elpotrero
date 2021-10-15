@@ -11,7 +11,7 @@ async function deleteTimetable (req: Express.Request, res: Express.Response){
 
     deleteTime(timetableId);
 
-    res.json("timetable was successfully deleted");
+    return res.json("timetable was successfully deleted");
 
 };
 

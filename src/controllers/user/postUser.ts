@@ -66,7 +66,7 @@ async function postUser (req: Express.Request, res: Express.Response){
             }
         })
 
-        res.json('Se registro exitosamente')
+        return res.json('Se registro exitosamente')
 
     }catch(error){
 

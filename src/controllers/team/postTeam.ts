@@ -15,11 +15,18 @@ async function postTeam (req: Express.Request, res: Express.Response){
                    image: team.image,
                    qualification: team.qualification,
                    votes: team.votes,
+                   user:{
+                    connect:{
+                        id: team.user
+                        }
+                    },
+                    player:{
+                        connect: team.player
+                        },
                 },
-                //Crear la relación con los jugadores
              })
           
-            res.json(newTeam)
+           return res.json(newTeam)
 
         }catch(error){
 
