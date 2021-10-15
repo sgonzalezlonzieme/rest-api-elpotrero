@@ -12,28 +12,20 @@ generator client {
 
 model User {
   id        Int     @id @default(autoincrement())
-<<<<<<< HEAD
-  name      String @default("Catu")
-  userName  String  @unique @default("Catu123")
-=======
-  name      String
-  userName  String  
->>>>>>> 10e6b3fc342e602accba35d479a13a2c5bcf0c48
+  name      String  @default("Catu")
+  userName  String  @default("Catu123")
   gender    Gender?
-  dni       Int   @unique @default(1234)
+  dni       Int     @unique @default(1234)
   birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
-  cellphone Int @default(12345)
+  cellphone Int     @default(12345)
   mail      String? @unique @default("catu@gmail.com")//Ver si es unique para el ingreso o solo por name
-  image     String @default("url")
-  password  String @default("12341234")//Fijarse en la documentación que posibilidades hay 
-  player    Player?  @relation(fields: [playerId], references: [id])
+  image     String  @default("url")
+  password  String  @default("12341234")//Fijarse en la documentación que posibilidades hay 
+  player    Player? @relation(fields: [playerId], references: [id])
   playerId  Int?
   timetable TimeTable[]
-<<<<<<< HEAD
   googleId  String?
-=======
   team      Team[]
->>>>>>> 10e6b3fc342e602accba35d479a13a2c5bcf0c48
 }
 
 model Player {
