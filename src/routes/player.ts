@@ -11,10 +11,6 @@ import getPlayersPunctuation from '../controllers/player/getPlayerPunctuation';
 import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
 
-<<<<<<< HEAD
-router.get('/', getPlayers);
-router.get('/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
-=======
 //router.get('/', passport.authenticate('jwt', { session: false }), getPlayers);
 //router.get('/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
 router.get('/', getPlayers);
@@ -26,6 +22,5 @@ router.get('/undefined', getPlayerUndefined);
 router.get('/punctuation/:order', getPlayersPunctuation);
 router.get('/position/:position', getPlayerByPosition);
 router.get('/byname/:name', getPlayerByName);
->>>>>>> player
 
 export default router;
