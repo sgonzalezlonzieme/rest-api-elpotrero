@@ -6,17 +6,25 @@ async function getUser (req: Express.Request, res: Express.Response){
     const query = req.query
     let id = query.id?.toString()
     
+    try{
     if(id){
         const user = await prisma.user.findUnique({
             where:{
                 id: parseInt(id)
+            },
+            include: {
+                player: true,
             }
         }) 
-        res.json(user) 
+        return res.json(user) 
     }
     const users = await prisma.user.findMany()
     
-    res.json(users)
+     return res.json(users)
+    }
+    catch(e){
+        console.log('error en busquedad de user', e)
+    }
 } 
 
 export default getUser

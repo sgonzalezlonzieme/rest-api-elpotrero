@@ -8,9 +8,10 @@ import { time } from 'console'
 
 async function postTimetable (req: Express.Request, res: Express.Response){
     try{
-        let timetable: TimeTable = req.body
+        let timetable: TimeTable = req.body;
 
         const newTimetable = await prisma.timeTable.create({
+
             data:{
                 day: dateChange(timetable.day),
                 hour: timetable.hour,
@@ -25,16 +26,17 @@ async function postTimetable (req: Express.Request, res: Express.Response){
                         id: timetable.user
                     }
                 },
-                gameId: timetable.game
+                // gameId: timetable.game
             },
 
-        })
-       res.json(newTimetable)
+        });
+
+      return res.json(newTimetable);
     }
     catch(e){
         console.log('error de carga de reserva de cancha', e)
-    }
+    };
 
-} 
+}; 
 
-export default postTimetable
+export default postTimetable;

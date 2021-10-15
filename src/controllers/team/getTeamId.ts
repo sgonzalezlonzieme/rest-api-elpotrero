@@ -5,18 +5,19 @@ const prisma = new PrismaClient()
 
 async function getTeam(req: Express.Request, res: Express.Response){
          
-    let id: string = req.params.id 
-
-    let teamId: number = parseInt(id)
+    let teamId= parseInt(req.params.id) 
 
     const team = await prisma.team.findUnique({
-         where: {id: teamId},
+         where: {
+             id:teamId
+            },
+
          include: {
              player: true
          }
     })
 
-    res.json(team)
+    return  res.json(team)
 }
 
 export default getTeam

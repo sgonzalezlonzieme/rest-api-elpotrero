@@ -3,10 +3,12 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function getTimetable (req: Express.Request, res: Express.Response){
-    const id = req.params.id
+
+    const id = parseInt(req.params.id);
+
     const timetable = await prisma.timeTable.findFirst({
         where:{
-            userId: parseInt(id)
+            userId: id
         },
         include:{
             field:true
@@ -14,9 +16,9 @@ async function getTimetable (req: Express.Request, res: Express.Response){
         orderBy:{
             id:'desc'
         }
-    })
+    });
     
-    res.json(timetable)
-} 
+   return res.json(timetable);
+}; 
 
-export default getTimetable
+export default getTimetable;

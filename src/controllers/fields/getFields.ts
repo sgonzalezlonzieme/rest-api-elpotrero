@@ -3,10 +3,13 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function getFields (req: Express.Request, res: Express.Response){
-    const query = req.query
-    let fieldId = query.id?.toString()
+
+    const query = req.query;
+
+    let fieldId = query.id?.toString();
 
     if(fieldId){
+        
         const field = await prisma.field.findUnique({
             where:{
                 id: parseInt(fieldId)
@@ -15,17 +18,19 @@ async function getFields (req: Express.Request, res: Express.Response){
                 fieldCharacteristics:true,
                 timetable: true
             }
-        })
-    res.json(field)
-    }
+        });
+
+    res.json(field);
+
+    };
     
     const fields = await prisma.field.findMany({
         include:{
             fieldCharacteristics:true
         }
-    })
+    });
     
-    res.json(fields)
+    res.json(fields);
 } 
 
-export default getFields
+export default getFields;

@@ -8,6 +8,12 @@ async function deleteUser (req: Express.Request, res: Express.Response){
         let id = req.params.id
         let userId = parseInt(id)
 
+        await prisma.timeTable.deleteMany({
+            where:{
+                userId: userId
+            },
+
+        })
         await prisma.user.delete({
             where:{
                 id: userId
@@ -23,7 +29,7 @@ async function deleteUser (req: Express.Request, res: Express.Response){
         })
 
 
-       res.json("user/player was successfully eliminated")
+      return res.json("user/player was successfully eliminated")
     }
     catch(e){
         console.log('error de eliminacion de cancha', e)
