@@ -12,13 +12,8 @@ generator client {
 
 model User {
   id        Int     @id @default(autoincrement())
-<<<<<<< HEAD
   name      String @default("Catu")
-  userName  String  @unique @default("Catu123")
-=======
-  name      String
-  userName  String  
->>>>>>> 10e6b3fc342e602accba35d479a13a2c5bcf0c48
+  userName  String  @default("Catu123")
   gender    Gender?
   dni       Int   @unique @default(1234)
   birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
@@ -29,11 +24,8 @@ model User {
   player    Player?  @relation(fields: [playerId], references: [id])
   playerId  Int?
   timetable TimeTable[]
-<<<<<<< HEAD
   googleId  String?
-=======
   team      Team[]
->>>>>>> 10e6b3fc342e602accba35d479a13a2c5bcf0c48
 }
 
 model Player {
