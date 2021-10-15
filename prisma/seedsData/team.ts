@@ -42,6 +42,7 @@ const team: Prisma.TeamCreateInput[] = [
     image: "url",
     qualification: 17,
     votes: 4,
+    available:false,
     user: {
         connect:{
             id:3

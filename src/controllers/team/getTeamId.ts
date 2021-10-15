@@ -19,7 +19,7 @@ async function getTeam(req: Express.Request, res: Express.Response){
          }
     })
 
-    return res.json(team)
+    return  res.json(team)
 }
 
 export default getTeam
