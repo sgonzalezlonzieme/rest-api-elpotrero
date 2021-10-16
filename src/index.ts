@@ -30,6 +30,6 @@ app.use((req, res, next) => {
 
 app.use(router)
 // levantamos nuestro servidor en el puerto 3000
-app.listen(3001, () => console.log('Server on port 3001'))
+app.listen(process.env.PORT || 3001, () => console.log('Server on port 3001'))
 
 
