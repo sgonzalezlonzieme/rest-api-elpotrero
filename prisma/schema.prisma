@@ -11,17 +11,23 @@ generator client {
 }
 
 model User {
+<<<<<<< HEAD
   id        Int     @id @default(autoincrement())
   name      String @default("Catu")
   userName  String  @default("Catu123")
+=======
+  id        Int         @id @default(autoincrement())
+  name      String      @default("Catu")
+  userName  String      @default("Catu123")
+>>>>>>> newPlayer
   gender    Gender?
-  dni       Int   @unique @default(1234)
+  dni       Int         @unique @default(1234)
   birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
-  cellphone Int @default(12345)
-  mail      String? @unique @default("catu@gmail.com")//Ver si es unique para el ingreso o solo por name
-  image     String @default("url")
-  password  String @default("12341234")//Fijarse en la documentación que posibilidades hay 
-  player    Player?  @relation(fields: [playerId], references: [id])
+  cellphone Int         @default(12345)
+  mail      String?     @unique @default("catu@gmail.com") //Ver si es unique para el ingreso o solo por name
+  image     String      @default("url")
+  password  String      @default("12341234") //Fijarse en la documentación que posibilidades hay 
+  player    Player?     @relation(fields: [playerId], references: [id])
   playerId  Int?
   timetable TimeTable[]
   googleId  String?
@@ -35,7 +41,7 @@ model Player {
   votes         Int      @default(1)
   available     Boolean  @default(false)
   user          User[]
-  team          Team[]   @relation("Players_Teams", references:[id])
+  team          Team[]   @relation("Players_Teams", references: [id])
   // team          Teams_Players[]
 }
 
@@ -48,7 +54,7 @@ model Team {
   available     Boolean  @default(true)
   user          User     @relation(fields: [userId], references: [id])
   userId        Int
-  player        Player[] @relation("Players_Teams", references:[id])
+  player        Player[] @relation("Players_Teams", references: [id])
   // player        Teams_Players[]  //pasarlo a plural si prisma lo permite
   // game          Game[] //pasarlo a plural si prisma lo permite
 }
