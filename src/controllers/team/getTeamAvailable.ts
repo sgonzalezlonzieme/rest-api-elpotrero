@@ -35,7 +35,7 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
         id: t.id,
         name: t.name,
         image: t.image,
-        qualification: t.qualification/t.votes,
+        qualification: Math.round(t.qualification/t.votes),
         available: t.available,
         user: captain[0],
         players: player[0]
