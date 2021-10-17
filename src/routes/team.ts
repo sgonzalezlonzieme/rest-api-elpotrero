@@ -14,7 +14,7 @@ router.post('/', postTeam);
 router.get('/available', getTeamAvailable);
 router.get('/', getTeamUser);
 router.get('/:id', getTeamWhereUserPlay);
-router.get('/team/:id', getTeam);
+router.get('/team/:id', passport.authenticate('jwt', { session: false }), getTeam);
 router.put('/team/:id', putTeam);
 router.delete('/team/:id', deleteTeam);
 
