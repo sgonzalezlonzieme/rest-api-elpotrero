@@ -1,7 +1,7 @@
 import Express from 'express';
 const router = Express.Router();
 import passport from 'passport';
-import postLoginLocal from '../controllers/login/postLocal'
+import postLoginLocal from '../controllers/login/postLoginLocal'
 import putGoogleLogin from '../controllers/login/putLoginGoogle'
 import postGoogleLogin from '../controllers/login/postGoogle'
 
