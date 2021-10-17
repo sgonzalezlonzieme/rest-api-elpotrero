@@ -15,9 +15,9 @@ model User {
   name      String @default("Por default")
   userName  String  @default("Por default")
   gender    Gender?
-  dni       Int   @unique @default(11111111111111111)
+  dni       Int   @unique @default(1234)
   birthday  String? //Fijarse el tipo de dato de Date, y hablarlo con el front.
-  cellphone Int @default(111111111111111)
+  cellphone Int @default(1234)
   mail      String? @unique @default("Por default")//Ver si es unique para el ingreso o solo por name
   image     String @default("Por default")
   password  String @default("Por default")//Fijarse en la documentación que posibilidades hay 

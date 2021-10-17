@@ -19,7 +19,6 @@ app.use(passport.initialize())
 passport.use(LocalStrategy)
 passport.use(GoogleStrategy)
 
-
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', 'http://localhost:8080'); // update to match the domain you will make the request from
     res.header('Access-Control-Allow-Credentials', 'true');
