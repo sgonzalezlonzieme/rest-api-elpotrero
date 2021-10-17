@@ -19,17 +19,19 @@ app.use(passport.initialize())
 passport.use(LocalStrategy)
 passport.use(GoogleStrategy)
 
-
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8080'); // update to match the domain you will make the request from
-    res.header('Access-Control-Allow-Credentials', 'true');
-    res.header("Access-Control-Allow-Headers", "*")
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
-    next();
-  });
+  res.header("Access-Control-Allow-Origin", "http://localhost:8080"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+  next();
+});
 
 app.use(router)
 // levantamos nuestro servidor en el puerto 3000
-app.listen(3001, () => console.log('Server on port 3001'))
+app.listen(process.env.PORT || 3001, () => console.log('Server on port 3001'))
 
 

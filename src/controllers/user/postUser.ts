@@ -43,8 +43,6 @@ async function postUser (req: Express.Request, res: Express.Response){
         const hash = await bcrypt.hash(user.password, salt)
         user.password = hash
 
-        //await bcrypt.compare(user.password, user.password)
-
         await prisma.user.create({
             data: {
                 name: user.name,
@@ -60,7 +58,6 @@ async function postUser (req: Express.Request, res: Express.Response){
                     create: {
                         position: user.player.position,
                         qualification: user.player.qualification,
-                        // votes: user.player.votes
                     }
                 }
             }

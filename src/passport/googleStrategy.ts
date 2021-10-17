@@ -13,31 +13,42 @@ export default new GoogleStrategy({
     callbackURL: "http://localhost:3001/auth/google", //Ver como se llama y cambiar en credentials
     passReqToCallback: true
 }, async (req, accessToken, refreshToken, profile, cb) => {
-   
+
+    
+    
     const defaultUser = {
         googleId: profile.id,
         name: `${profile.name?.givenName} ${profile.name?.familyName}`,
-        mail: profile.emails
+        mail: profile._json.email,
+        image: profile._json.picture
     }
+    // console.log("DEFAULTUSER USERNAME", defaultUser.userName)
+    //VER QUE INFORMACIÓN LE PUEDO SACAR AL PROFILE, VER COMO SACAR EL USERNAME SI 
+    //NO VIENE, Y CONFIGURAR PARA QUE LLEGUE LA IMAGEN
+    console.log(
+   "PROFILE DETAILS", 
+    profile,
+    "MAIIILL",
+    profile.emails
+    )
 
     const userDb = await prisma.user.findFirst({
         where: {googleId: defaultUser.googleId}
     })
-
+    
     if(userDb){
        return cb(null, userDb)
     }
-
-    
 
     const user = await prisma.user.create({
         data: {
             name: defaultUser.name,
             googleId: defaultUser.googleId,
-            // mail: profile.emails[0].value
+            mail: defaultUser.mail,
+            image: defaultUser.image
         }
     })
-    
+    console.log(user)
     return cb(null, user)
   })
   
