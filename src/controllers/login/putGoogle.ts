@@ -48,5 +48,4 @@ export default async function putLoginGoogle(req: Express.Request, res: Express.
     
             return res.send({...googleUser, token: token})
         
-    
 }
