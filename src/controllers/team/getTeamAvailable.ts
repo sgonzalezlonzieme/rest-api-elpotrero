@@ -2,6 +2,7 @@ import Express from 'express';
 import { PrismaClient } from '@prisma/client'
 import playerInfo from './functions/playerInfo';
 import captainInfo from './functions/captainInfo(user)';
+import { userInfo } from 'os';
 const prisma = new PrismaClient()
 
 
@@ -25,9 +26,7 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
             }
         }
     })
-    console.log(team)
-    let player = playerInfo(team)
-    let captain = captainInfo(team)
+
     
     const response = team.map(t =>{
         return{
@@ -36,8 +35,16 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
         image: t.image,
         qualification: Math.round(t.qualification/t.votes),
         available: t.available,
-        user: captain[0],
-        players: player[0]
+        user: t.user.name,
+        userId: t.user.id,
+        players: t.player.map(tp =>{
+            return{
+                id: tp.user[0].id,
+                playerName: tp.user[0].name,
+                position: tp.position,
+                qualification: Math.round(tp.qualification/tp.votes)
+            }
+        })
     }
     })
 
