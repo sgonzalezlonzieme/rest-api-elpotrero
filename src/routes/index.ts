@@ -7,6 +7,7 @@ import teamRoute from './team'
 import timetableRoute from './timetable'
 import checkoutRoute from './checkout';
 import loginRoute from './login'
+import notificationRoute from './notifications'
 
 router.use('/user', userRoute);
 router.use('/player', playerRoute);
@@ -15,6 +16,7 @@ router.use('/timetable', timetableRoute)
 router.use('/checkout', checkoutRoute)
 router.use('/team', teamRoute) 
 router.use('/auth', loginRoute)
+router.use('/notification', notificationRoute);
 
 
 
