@@ -11,16 +11,16 @@ import getPlayersPunctuation from '../controllers/player/getPlayerPunctuation';
 import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
 
-//router.get('/', passport.authenticate('jwt', { session: false }), getPlayers);
-//router.get('/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
-router.get('/', passport.authenticate('jwt', { session: false }), getPlayers);
-router.get('/byid/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
-router.get('/available', passport.authenticate('jwt', { session: false }), getPlayerAvailable);
-router.get('/female', passport.authenticate('jwt', { session: false }), getPlayerFemale);
-router.get('/male', passport.authenticate('jwt', { session: false }), getPlayerMale);
-router.get('/undefined', passport.authenticate('jwt', { session: false }), getPlayerUndefined);
-router.get('/punctuation/:order', passport.authenticate('jwt', { session: false }), getPlayersPunctuation);
-router.get('/position/:position', passport.authenticate('jwt', { session: false }), getPlayerByPosition);
-router.get('/byname/:name', passport.authenticate('jwt', { session: false }), getPlayerByName);
+//router.get('/', getPlayers);
+//router.get('/:id', getPlayersById);
+router.get('/', getPlayers);
+router.get('/byid/:id', getPlayersById);
+router.get('/available', getPlayerAvailable);
+router.get('/female', getPlayerFemale);
+router.get('/male', getPlayerMale);
+router.get('/undefined', getPlayerUndefined);
+router.get('/punctuation/:order', getPlayersPunctuation);
+router.get('/position/:position', getPlayerByPosition);
+router.get('/byname/:name', getPlayerByName);
 
 export default router;

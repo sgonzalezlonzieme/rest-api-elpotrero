@@ -10,11 +10,11 @@ import passport from 'passport'
 const router = Express.Router();
 
 
-router.get('/', getFields);
-router.get('/available/:day', passport.authenticate('jwt', { session: false }), getFieldsAvailable);
-router.post('/', passport.authenticate('jwt', { session: false }), postField);
-router.put('/:id', passport.authenticate('jwt', { session: false }), putField);
-router.delete('/:id', passport.authenticate('jwt', { session: false }), deleteField);
+router.get('/',getFields);
+router.get('/available/:day', getFieldsAvailable);
+router.post('/',  postField);
+router.put('/:id', putField);
+router.delete('/:id', deleteField);
 
 
 

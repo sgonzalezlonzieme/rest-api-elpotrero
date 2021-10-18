@@ -19,7 +19,9 @@ export default async function putLoginGoogle(
   const cellphone = parseInt(user.cellphone);
 
   const userDni = await prisma.user.findFirst({
-    where: { dni: dni },
+    where: {
+      dni: dni,
+    },
   });
 
   if (userDni) {
