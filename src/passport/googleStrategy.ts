@@ -2,8 +2,6 @@ import passportGoogle from 'passport-google-oauth20'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient() 
 import passport from 'passport'
-import { userInfo } from 'os'
-
 
 const GoogleStrategy = passportGoogle.Strategy
 
@@ -14,8 +12,6 @@ export default new GoogleStrategy({
     passReqToCallback: true
 }, async (req, accessToken, refreshToken, profile, cb) => {
 
-    
-    
     const defaultUser = {
         googleId: profile.id,
         name: `${profile.name?.givenName} ${profile.name?.familyName}`,
@@ -45,10 +41,15 @@ export default new GoogleStrategy({
             name: defaultUser.name,
             googleId: defaultUser.googleId,
             mail: defaultUser.mail,
-            image: defaultUser.image
+            image: defaultUser.image,
+            player: {
+                create: {
+                    position: "GOALKEEPER",
+                }
+            }
         }
     })
-    console.log(user)
+   
     return cb(null, user)
   })
   
