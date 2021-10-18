@@ -25,11 +25,10 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
             }
         }
     })
-
+    console.log(team)
     let player = playerInfo(team)
-
     let captain = captainInfo(team)
-
+    
     const response = team.map(t =>{
         return{
         id: t.id,
