@@ -10,9 +10,11 @@ export default async function putLoginGoogle(req: Express.Request, res: Express.
         //EN EL FRONT LA PRIMERA VEZ TODOS LOS DATOS SON OBLIGATORIOS
         //LUEGO YA TENDRÍA QUE HACER EL PUT DE CATU DENTRO DE LA PÁGINA
         //LA SEGUNDA VEZ SE USA LA RUTA POSTLOGINGOOGLE
-        const user: User = req.body //TYPE USER
+        const user: any = req.body //TYPE USER
 
         //DEVOLVER MENSAJE SI YA EXISTE EL UNIQUE
+        const dni = parseInt(user.dni)
+        const cellphone = parseInt(user.cellphone)
 
             const userDni = await prisma.user.findFirst({
                 where: {dni: user.dni}
@@ -20,41 +22,31 @@ export default async function putLoginGoogle(req: Express.Request, res: Express.
     
             if(userDni){
                 return res.send("El dni ya existe en la base de datos")
-            }
-    
-            const userMail = await prisma.user.findFirst({
-                where: {mail: user.mail}
-            })
-    
-            if(userMail){
-                return res.send("El mail ya existe en la base de datos")
-            }
-    
-            const googleUser = await prisma.user.update({
+            }           
+
+
+            const googleUser: any = await prisma.user.update({
                 where:{
                     id: user.id
                 },
-                data:{
-                    name: user.name,
+                data: {
+                    dni: dni,
                     userName: user.userName,
                     gender: user.gender,
-                    dni: user.dni,
                     birthday: user.birthday,
-                    cellphone: user.cellphone,
-                    mail: user.mail,
-                    image: user.image,  
+                    cellphone: cellphone,
                     player: {
                         update: {
-                            position: user.player.position,
+                            position: user.player
                         }
                     }
                 }
-    
             })
     
-            const token = jwt.sign({id: user.id}, config.jwtSecret,
-                { expiresIn: "60m"})
+             const token = jwt.sign({id: user.id}, config.jwtSecret,
+                 { expiresIn: "60m"})
     
             return res.send({...googleUser, token: token})
-     
+        
+    
 }
