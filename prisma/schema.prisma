@@ -26,6 +26,7 @@ model User {
   timetable TimeTable[]
   googleId  String? 
   team      Team[]
+
 }
 
 model Player {
@@ -49,6 +50,7 @@ model Team {
   user          User     @relation(fields: [userId], references: [id])
   userId        Int
   player        Player[] @relation("Players_Teams", references:[id])
+  notificaction Notification[]
   // player        Teams_Players[]  //pasarlo a plural si prisma lo permite
   // game          Game[] //pasarlo a plural si prisma lo permite
 }
@@ -99,6 +101,17 @@ model TimeTable {
   userId   Int
 }
 
+model Notification{
+  id        Int        @id @default(autoincrement())
+  day       String
+  hour      String
+  duration  Int
+  guest     Int
+  attending String     @default("PENDING")
+  createdAt DateTime   @default(now())    
+  team     Team        @relation(fields: [teamId], references: [id])
+  teamId   Int
+}
 // model Game {
 //   id        Int        @id @default(autoincrement())
 //   team      Team       @relation(fields: [teamId], references: [id])
@@ -125,6 +138,11 @@ enum Gender {
   UNDEFINED
 }
 
+// enum Attending {
+//   YES
+//   NO
+//   UNDEFINED
+// }
 // model Team_Player {
 //   id Int @id @default(autoincrement())
 //   player Player @relation(fields: [playerId], references: [id])
