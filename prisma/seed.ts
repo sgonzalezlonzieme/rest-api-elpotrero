@@ -3,6 +3,8 @@ import users from './seedsData/user'
 import fields from './seedsData/fields'
 import teams from './seedsData/team'
 import timetables from "./seedsData/timetable";
+import notifications from "./seedsData/notification";
+
 const prisma = new PrismaClient();
 
 async function main() {
@@ -31,7 +33,13 @@ async function main() {
           data: timetable
       });
   })
-  
+
+    notifications.forEach(async(notification) => {
+      await prisma.notification.create({
+          data: notification
+      });
+  })
+
   
 }
 
