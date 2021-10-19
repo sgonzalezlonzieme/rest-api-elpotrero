@@ -1,6 +1,7 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 import dateChange from '../timetable/functions/dateChange';
+import playerInfo from '../team/functions/playerInfo';
 const prisma = new PrismaClient()
 
 
@@ -8,29 +9,42 @@ const prisma = new PrismaClient()
 async function postNotification (req: Express.Request, res: Express.Response){
     try{
         let notification = req.body;
-
-        const newNotification = await prisma.notification.create({
-
+        let info = [
+            notification.day,
+            notification.hour,
+            notification.duration,
+            notification.team
+        ]
+        
+        let players = notification.player
+        players = notification.player.map((p:any) =>{
+            return [...info,p]
+        })
+        const newNotification = players.forEach(async(player:any) =>{ 
+            await prisma.notification.create({
             data:{
-                day: notification.day,
-                hour: notification.hour,
-                duration: notification.duration,
+                day: player[0],
+                hour: player[1],
+                duration: player[2],
                 player:{
                     connect:{
-                        id: notification.player
+                        id: player[4].id
                     }
                 },
                 team:{
                     connect:{
-                        id: notification.team
+                        id: player[3]
                     }
                 },
 
             },
 
-        });
+        })
+        return res.json(newNotification)
+        
+        })
 
-      return res.json(newNotification);
+      
     }
     catch(e){
         console.log('error de carga de reserva de cancha', e)
@@ -39,3 +53,4 @@ async function postNotification (req: Express.Request, res: Express.Response){
 }; 
 
 export default postNotification;
+
