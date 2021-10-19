@@ -3,22 +3,12 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function getNotifications (req: Express.Request, res: Express.Response){
+    const id = req.params.id;
 
     try{
-    const id = parseInt(req.params.id);
-
-    // const notifiactions = await prisma.notification.findMany({
-    //     where:{
-    //         teamId: id
-    //     },
-    //     orderBy:{
-    //         id:'desc'
-    //     }
-    // });
-
     let invitations = await prisma.notification.findMany({
         where:{
-            playerId: id
+            playerId: parseInt(id)
         },
         include:{
             team:{

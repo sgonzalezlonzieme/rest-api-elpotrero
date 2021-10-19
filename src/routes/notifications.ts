@@ -9,7 +9,7 @@ const router = Express.Router();
 
 
 router.get('/:id', getNotifications);
-router.get('/team/:id', getNotificationMyTeam);
+router.get('/myteam/:id', getNotificationMyTeam);
 router.put('/', putNotification);
 router.post('/', postNotification);
 

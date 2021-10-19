@@ -37,6 +37,7 @@ model Player {
   available     Boolean  @default(false)
   user          User[]
   team          Team[]   @relation("Players_Teams", references:[id])
+  notificaction Notification[]
 }
 
 model Team {
@@ -94,6 +95,7 @@ model Notification{
   day       String
   hour      String
   duration  Int
+  player    Player     @relation(fields: [playerId], references: [id])
   playerId  Int
   attending String     @default("PENDING")
   createdAt DateTime   @default(now())    

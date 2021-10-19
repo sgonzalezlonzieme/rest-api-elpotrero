@@ -1,5 +1,6 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
+import team from '../../../prisma/seedsData/team';
 const prisma = new PrismaClient()
 
 async function getNotificationMyTeam (req: Express.Request, res: Express.Response){
@@ -7,16 +8,28 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
     try{
     const id = parseInt(req.params.id);
 
-    const notifiactions = await prisma.notification.findMany({
-        where:{
-            team:{
-                userId:id
-            }
+    const teamUser = await prisma.team.findMany({
+        where: {
+            userId: id,
+           },
+        include:{
+            notificaction:true
         },
         orderBy:{
             id:'desc'
         }
-    });
+   })
+
+   return res.json(teamUser);
+}
+catch(e){
+    console.log("error in getting notifications",e)
+}
+}; 
+
+export default getNotificationMyTeam;
+
+
 
     // let invitations = await prisma.notification.findMany({
     //     where:{
@@ -60,12 +73,3 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
     //     }
     //     return 0
     // })
-    
-   return res.json(notifiactions);
-}
-catch(e){
-    console.log("error in getting notifications",e)
-}
-}; 
-
-export default getNotificationMyTeam;
