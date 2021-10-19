@@ -7,6 +7,7 @@ import getTeamUser from '../controllers/team/getTeamUser'
 import putTeam from '../controllers/team/putTeam';
 import deleteTeam from '../controllers/team/deleteTeam';
 import getTeamWhereUserPlay from '../controllers/team/getTeamWhereUserPlay';
+import putTeamQualification from '../controllers/team/putTeamQualification'
 import passport from 'passport'
 
 
@@ -16,6 +17,7 @@ router.get('/', getTeamUser);
 router.get('/:id', getTeamWhereUserPlay);
 router.get('/team/:id',getTeamId);
 router.put('/team/:id', putTeam);
+router.put('/qualification', putTeamQualification)
 router.delete('/team/:id', deleteTeam);
 
 

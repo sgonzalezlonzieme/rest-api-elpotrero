@@ -10,6 +10,7 @@ import getPlayerUndefined from '../controllers/player/getPlayerUndefined';
 import getPlayersPunctuation from '../controllers/player/getPlayerPunctuation';
 import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
+import putPlayerQualification from '../controllers/player/putPlayerQualification'
 
 //router.get('/', getPlayers);
 //router.get('/:id', getPlayersById);
@@ -22,5 +23,6 @@ router.get('/undefined', getPlayerUndefined);
 router.get('/punctuation/:order', getPlayersPunctuation);
 router.get('/position/:position', getPlayerByPosition);
 router.get('/byname/:name', getPlayerByName);
+router.put('/qualification', putPlayerQualification)
 
 export default router;
