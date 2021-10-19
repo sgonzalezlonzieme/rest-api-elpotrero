@@ -1,7 +1,6 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
-import dateChange from '../timetable/functions/dateChange';
-import playerInfo from '../team/functions/playerInfo';
+import dateChange from '../timetable/functions/dateChange'
 const prisma = new PrismaClient()
 
 
@@ -23,7 +22,7 @@ async function postNotification (req: Express.Request, res: Express.Response){
         const newNotification = players.forEach(async(player:any) =>{ 
             await prisma.notification.create({
             data:{
-                day: player[0],
+                day: dateChange(player[0]),
                 hour: player[1],
                 duration: player[2],
                 player:{
