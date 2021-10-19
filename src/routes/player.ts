@@ -10,7 +10,11 @@ import getPlayerUndefined from '../controllers/player/getPlayerUndefined';
 import getPlayersPunctuation from '../controllers/player/getPlayerPunctuation';
 import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
+<<<<<<< HEAD
 import getPlayerAll from '../controllers/player/getPlayerAll';
+=======
+import putPlayerQualification from '../controllers/player/putPlayerQualification'
+>>>>>>> RoutesSanti
 
 //router.get('/', getPlayers);
 //router.get('/:id', getPlayersById);
@@ -23,6 +27,10 @@ router.get('/undefined', getPlayerUndefined);
 router.get('/punctuation/:order', getPlayersPunctuation);
 router.get('/position/:position', getPlayerByPosition);
 router.get('/byname/:name', getPlayerByName);
+<<<<<<< HEAD
 router.get('/all', getPlayerAll);
+=======
+router.put('/qualification', putPlayerQualification)
+>>>>>>> RoutesSanti
 
 export default router;
