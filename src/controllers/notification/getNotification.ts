@@ -18,7 +18,7 @@ async function getNotifications (req: Express.Request, res: Express.Response){
 
     let invitations = await prisma.notification.findMany({
         where:{
-            guest: id
+            playerId: id
         },
         include:{
             team:{

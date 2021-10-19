@@ -4,7 +4,7 @@ export default interface Notification {
     day: string,
     hour: string,
     duration: number,
-    guest:number,
+    playerId:number,
     attending: string,
     createdAt: any,
     user: User

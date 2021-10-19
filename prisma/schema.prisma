@@ -37,7 +37,6 @@ model Player {
   available     Boolean  @default(false)
   user          User[]
   team          Team[]   @relation("Players_Teams", references:[id])
-  // team          Teams_Players[]
 }
 
 model Team {
@@ -51,17 +50,8 @@ model Team {
   userId        Int
   player        Player[] @relation("Players_Teams", references:[id])
   notificaction Notification[]
-  // player        Teams_Players[]  //pasarlo a plural si prisma lo permite
-  // game          Game[] //pasarlo a plural si prisma lo permite
 }
 
-// model Teams_Players{
-//   id            Int      @id @default(autoincrement())
-//   player        Player   @relation(fields: [playerId], references: [id])
-//   playerId      Int
-//   team          Team   @relation(fields: [teamId], references: [id])
-//   teamId        Int
-// }
 
 model Field {
   id                   Int                   @id @default(autoincrement())
@@ -95,8 +85,6 @@ model TimeTable {
   duration Int    @default(1)
   field    Field  @relation(fields: [fieldId], references: [id])
   fieldId  Int
-  // game     Game?  @relation(fields: [gameId], references: [id])
-  // gameId   Int?   @unique
   user     User   @relation(fields: [userId], references: [id])
   userId   Int
 }
@@ -106,18 +94,22 @@ model Notification{
   day       String
   hour      String
   duration  Int
-  guest     Int
+  playerId  Int
   attending String     @default("PENDING")
   createdAt DateTime   @default(now())    
   team     Team        @relation(fields: [teamId], references: [id])
   teamId   Int
 }
-// model Game {
-//   id        Int        @id @default(autoincrement())
-//   team      Team       @relation(fields: [teamId], references: [id])
-//   teamId    Int
-//   timetable TimeTable?
+
+// model Players_Teams{
+//   team     Team        @relation(fields: [teamId], references: [id])
+//   teamId   Int
+//   player   Player     @relation(fields: [playerId], references: [id])
+//   playerId   Int
+  
+
 // }
+
 
 enum Position {
   GOALKEEPER

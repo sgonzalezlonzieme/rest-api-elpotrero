@@ -8,9 +8,9 @@ import passport from 'passport';
 const router = Express.Router();
 
 
-router.get('/:id', passport.authenticate('jwt', { session: false }), getNotifications);
-router.get('/team/:id', passport.authenticate('jwt', { session: false }), getNotificationMyTeam);
-router.put('/', passport.authenticate('jwt', { session: false }), putNotification);
-router.post('/', passport.authenticate('jwt', { session: false }), postNotification);
+router.get('/:id', getNotifications);
+router.get('/team/:id', getNotificationMyTeam);
+router.put('/', putNotification);
+router.post('/', postNotification);
 
 export default router;

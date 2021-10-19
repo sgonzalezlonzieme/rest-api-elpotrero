@@ -5,7 +5,7 @@ const notifications:Prisma.NotificationCreateInput[] = [
         day:"11/10/2021",
         hour:"10:00",
         duration:1,
-        guest: 2,
+        playerId: 2,
         team: {
             connect:{
                 id:1
@@ -17,7 +17,7 @@ const notifications:Prisma.NotificationCreateInput[] = [
         day:"12/10/2021",
         hour:"11:00",
         duration:1,
-        guest: 2,
+        playerId: 2,
         team: {
             connect:{
                 id:1
@@ -28,7 +28,7 @@ const notifications:Prisma.NotificationCreateInput[] = [
         day:"11/10/2021",
         hour:"10:00",
         duration:1,
-        guest: 1,
+        playerId: 1,
         team: {
             connect:{
                 id:2
@@ -39,7 +39,7 @@ const notifications:Prisma.NotificationCreateInput[] = [
         day:"11/10/2021",
         hour:"10:00",
         duration:1,
-        guest: 1,
+        playerId: 1,
         team: {
             connect:{
                 id:2
