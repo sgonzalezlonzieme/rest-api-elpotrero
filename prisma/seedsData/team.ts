@@ -1,9 +1,10 @@
 import { Prisma } from "@prisma/client";
+const img = "https://scontent.feze11-1.fna.fbcdn.net/v/t1.6435-9/246721314_10223753867867303_1359235114715575403_n.jpg?_nc_cat=106&_nc_rgb565=1&ccb=1-5&_nc_sid=730e14&_nc_eui2=AeHiQRam5DB0a4N0N8b9MxaMrRFOMM8mUEqtEU4wzyZQSlsE1tnFjR6RRpKaHn3eLQ4&_nc_ohc=IMzc8wsL-vMAX9KUPjp&_nc_ht=scontent.feze11-1.fna&oh=c0722c386816ce28a8825a0f38b151c5&oe=6195E926"
 
 const team: Prisma.TeamCreateInput[] = [
     {
     name: "EL DECANO",
-    image: "url",
+    image: img,
     qualification: 10,
     votes: 2,
     user: {
@@ -23,7 +24,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
     name: "EL DRINK TEAM",
-    image: "url",
+    image: img,
     qualification: 20,
     votes: 3,
     available:true,
@@ -42,7 +43,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
     name: "MAL BICHO",
-    image: "url",
+    image: img,
     qualification: 17,
     votes: 4,
     available:true,
@@ -60,7 +61,7 @@ const team: Prisma.TeamCreateInput[] = [
     },   
     {
     name: "QUEMEROS FC",
-    image: "url",
+    image: img,
     qualification: 17,
     votes: 5,
     available:true,
@@ -79,7 +80,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "CHELITO FC",
-        image: "url",
+        image: img,
         qualification: 17,
         votes: 5,
         available:false,
@@ -99,7 +100,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "A.C.D.",
-        image: "url",
+        image: img,
         qualification: 17,
         votes: 5,
         available:false,
@@ -119,7 +120,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "KABUL DEXTER",
-        image: "url",
+        image: img,
         qualification: 100,
         votes: 20,
         available:true,
@@ -138,7 +139,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "GRUPO HALCON",
-        image: "url",
+        image: img,
         qualification: 25 ,
         votes: 5,
         available:true,
@@ -158,7 +159,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "LA GALERA FC",
-        image: "url",
+        image: img,
         qualification: 21,
         votes: 8,
         available:false,
@@ -178,7 +179,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "TIMAO FC",
-        image: "url",
+        image: img,
         qualification: 21,
         votes: 8,
         available:true,
@@ -197,7 +198,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "BERENJENEITOR",
-        image: "url",
+        image: img,
         qualification: 30,
         votes: 9,
         available:true,
@@ -216,7 +217,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "MAUER FC",
-        image: "url",
+        image: img,
         qualification: 8,
         votes: 3,
         available:true,
@@ -235,7 +236,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "FUTBOLICHE",
-        image: "url",
+        image: img,
         qualification: 50,
         votes: 25,
         available:true,
@@ -254,7 +255,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "EL BOSQUE",
-        image: "url",
+        image: img,
         qualification: 7,
         votes: 5,
         available:true,
@@ -273,7 +274,7 @@ const team: Prisma.TeamCreateInput[] = [
     },
     {
         name: "LA GLORIOSA LP",
-        image: "url",
+        image: img,
         qualification: 3,
         votes: 1,
         available:true,
@@ -293,7 +294,7 @@ const team: Prisma.TeamCreateInput[] = [
 // -------------------------------------------------
     {
         name: "DALMA MENEA",
-        image: "url",
+        image: img,
         qualification: 10,
         votes: 2,
         user: {
@@ -313,7 +314,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
         name: "MIRAME MUEVO",
-        image: "url",
+        image: img,
         qualification: 20,
         votes: 3,
         available:true,
@@ -332,7 +333,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
         name: "WASABI FC",
-        image: "url",
+        image: img,
         qualification: 17,
         votes: 4,
         available:true,
@@ -350,7 +351,7 @@ const team: Prisma.TeamCreateInput[] = [
         },   
         {
         name: "BACANAS FC",
-        image: "url",
+        image: img,
         qualification: 17,
         votes: 5,
         available:true,
@@ -369,7 +370,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "TIRAME UN CENTRO",
-            image: "url",
+            image: img,
             qualification: 17,
             votes: 5,
             available:false,
@@ -389,7 +390,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "MELLAMANS",
-            image: "url",
+            image: img,
             qualification: 17,
             votes: 5,
             available:false,
@@ -409,7 +410,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "HEINZE FC",
-            image: "url",
+            image: img,
             qualification: 100,
             votes: 20,
             available:true,
@@ -428,7 +429,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "HAY TABLA",
-            image: "url",
+            image: img,
             qualification: 25 ,
             votes: 5,
             available:true,
@@ -448,7 +449,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "CUMBIA NENA",
-            image: "url",
+            image: img,
             qualification: 21,
             votes: 8,
             available:false,
@@ -468,7 +469,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "TEMPORADA ALTA",
-            image: "url",
+            image: img,
             qualification: 21,
             votes: 8,
             available:true,
@@ -487,7 +488,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "JUST LUD IR",
-            image: "url",
+            image: img,
             qualification: 30,
             votes: 9,
             available:true,
@@ -506,7 +507,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "PARRILLERAS",
-            image: "url",
+            image: img,
             qualification: 8,
             votes: 3,
             available:true,
@@ -525,7 +526,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "MAMBO",
-            image: "url",
+            image: img,
             qualification: 50,
             votes: 25,
             available:true,
@@ -544,7 +545,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "S.D.T.",
-            image: "url",
+            image: img,
             qualification: 7,
             votes: 5,
             available:true,
@@ -563,7 +564,7 @@ const team: Prisma.TeamCreateInput[] = [
         },
         {
             name: "ALOHA",
-            image: "url",
+            image: img,
             qualification: 3,
             votes: 1,
             available:true,

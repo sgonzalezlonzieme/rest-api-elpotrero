@@ -1,6 +1,6 @@
 import Express from 'express'
 import { PrismaClient } from '@prisma/client'
-import dateChange from '../timetable/functions/dateChange'
+import dateChange from '../../timetable/functions/dateChange'
 const prisma = new PrismaClient()
 
 
