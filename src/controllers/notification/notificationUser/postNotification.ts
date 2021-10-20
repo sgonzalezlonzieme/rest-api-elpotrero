@@ -22,7 +22,7 @@ async function postNotification (req: Express.Request, res: Express.Response){
         const newNotification = players.forEach(async(player:any) =>{ 
             await prisma.notification.create({
             data:{
-                day: dateChange(player[0]),
+                day: player[0],
                 hour: player[1],
                 duration: player[2],
                 player:{
