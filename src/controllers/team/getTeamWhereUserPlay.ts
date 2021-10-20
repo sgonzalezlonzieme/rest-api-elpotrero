@@ -1,6 +1,5 @@
 import Express from 'express';
 import { PrismaClient } from '@prisma/client'
-import playerInfo from './functions/playerInfo';
 const prisma = new PrismaClient()
 
 

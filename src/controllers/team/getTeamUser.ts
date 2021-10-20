@@ -25,6 +25,7 @@ async function getTeamUser(req: Express.Request, res: Express.Response){
     })
     
     let player = playerInfo(team)
+    
 
     const response = team.map(t =>{
         return {

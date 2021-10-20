@@ -15,7 +15,11 @@ async function postNotification (req: Express.Request, res: Express.Response){
                 day: notification.day,
                 hour: notification.hour,
                 duration: notification.duration,
-                guest: notification.guest,
+                player:{
+                    connect:{
+                        id: notification.player
+                    }
+                },
                 team:{
                     connect:{
                         id: notification.team
