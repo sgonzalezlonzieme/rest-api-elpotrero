@@ -2,11 +2,11 @@ import Express from 'express'
 import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
-async function getNotifications (req: Express.Request, res: Express.Response){
+async function getNotificationsRespond (req: Express.Request, res: Express.Response){
     const id = req.params.id;
 
     try{
-    let invitations = await prisma.notification.findMany({
+    let invitations = await prisma.notificationTeams.findMany({
         where:{
             playerId: parseInt(id)
         },
@@ -25,9 +25,6 @@ async function getNotifications (req: Express.Request, res: Express.Response){
     let response = invitations.map(invitation =>{
         return{
             id: invitation.id,
-            day: invitation.day,
-            hour: invitation.hour,
-            duration: invitation.duration,
             attending: invitation.attending,
             teamId: invitation.team.id,
             teamName: invitation.team.name,
@@ -38,16 +35,6 @@ async function getNotifications (req: Express.Request, res: Express.Response){
             userCell: invitation.team.user.cellphone
         }
     })
-    // let response = [...notifiactions, ...invitations]
-    // let answer = response.sort(function(a,b){
-    //     if(a.id > b.id){
-    //         return -1
-    //     }
-    //     if(a.id < b.id){
-    //         return 1
-    //     }
-    //     return 0
-    // })
     
    return res.json(response);
 }
@@ -56,4 +43,4 @@ catch(e){
 }
 }; 
 
-export default getNotifications;
+export default getNotificationsRespond;

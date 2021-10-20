@@ -9,10 +9,6 @@ import passport from "passport";
 router.post("/", postUser);
 router.get("/", getUser);
 router.put("/:id", passport.authenticate("jwt", { session: false }), putUser);
-router.delete(
-  "/:id",
-  passport.authenticate("jwt", { session: false }),
-  deleteUser
-);
+router.delete("/:id", passport.authenticate('jwt', { session: false }),deleteUser)
 
 export default router;

@@ -4,6 +4,7 @@ import fields from './seedsData/fields'
 import teams from './seedsData/team'
 import timetables from "./seedsData/timetable";
 import notifications from "./seedsData/notification";
+import notificationTeams from './seedsData/notificationTeams'
 
 const prisma = new PrismaClient();
 
@@ -39,7 +40,12 @@ async function main() {
           data: notification
       });
   })
-
+  
+   notificationTeams.forEach(async(notification) => {
+    await prisma.notificationTeams.create({
+        data: notification
+    });
+})
   
 }
 

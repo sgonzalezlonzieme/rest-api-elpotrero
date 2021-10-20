@@ -4,11 +4,11 @@ const prisma = new PrismaClient()
 
 
 
-async function putNotification (req: Express.Request, res: Express.Response){
+async function putNotificationTeam (req: Express.Request, res: Express.Response){
     try{    
         const body = req.body
 
-        const updateNotification = await prisma.notification.update({
+        const updateNotificationTeams = await prisma.notificationTeams.update({
             where:{
                 id:body.id
             },
@@ -18,7 +18,7 @@ async function putNotification (req: Express.Request, res: Express.Response){
 
         });
         
-       res.json(updateNotification);
+       res.json(updateNotificationTeams);
     }
     catch(e){
         console.log('error de actualizacion de cancha', e)
@@ -26,4 +26,4 @@ async function putNotification (req: Express.Request, res: Express.Response){
 
 } 
 
-export default putNotification;
+export default putNotificationTeam;

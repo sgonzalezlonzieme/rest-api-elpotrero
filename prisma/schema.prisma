@@ -38,6 +38,7 @@ model Player {
   user          User[]
   team          Team[]   @relation("Players_Teams", references:[id])
   notificaction Notification[]
+  notificactionTeams NotificationTeams[]
 }
 
 model Team {
@@ -51,6 +52,7 @@ model Team {
   userId        Int
   player        Player[] @relation("Players_Teams", references:[id])
   notificaction Notification[]
+  notificactionTeams NotificationTeams[]
 }
 
 
@@ -103,6 +105,16 @@ model Notification{
   teamId   Int
 }
 
+model NotificationTeams {
+  id        Int        @id @default(autoincrement())
+  player    Player     @relation(fields: [playerId], references: [id])
+  playerId  Int
+  attending String     @default("PENDING")
+  createdAt DateTime   @default(now())    
+  team      Team       @relation(fields: [teamId], references: [id])
+  teamId    Int
+
+}
 // model Players_Teams{
 //   team     Team        @relation(fields: [teamId], references: [id])
 //   teamId   Int
