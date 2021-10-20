@@ -1,3 +1,4 @@
+
 import Express from 'express'
 const router = Express.Router()
 import postTeam from '../controllers/team/postTeam';
@@ -22,3 +23,4 @@ router.delete('/team/:id', deleteTeam);
 
 
 export default router
+
