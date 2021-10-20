@@ -19,7 +19,7 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
         const userData: LoginData = req.body  
 
         if(!userData.password || !userData.mail){
-            return res.status(404).send("Faltan ingresar datos")
+            return res.send("Faltan ingresar datos")
         }
        
         const user = await prisma.user.findFirst({
@@ -29,8 +29,12 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
         })
 
         if(!user){
-            return res.status(404).send("El usuario no existe")
+            return res.send("El usuario no existe")
         } 
+
+        if(user.googleId !== null){
+            return res.send("Inicie sesión con google")
+        }
 
         const isMatch: boolean = await bcrypt.compare(userData.password, user.password)
         
@@ -42,7 +46,7 @@ async function postLogin(req: Express.Request, res: Express.Response ) {
             return res.status(200).json({...user, token: createdToken})
         }
       
-        return res.status(400).json({...user, token: "Password incorrecta"})
+        return res.json("La contraseña es incorrecta")
 
 }
 
