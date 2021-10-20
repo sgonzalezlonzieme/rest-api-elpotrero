@@ -9,7 +9,7 @@ async function postNotification (req: Express.Request, res: Express.Response){
     try{
         let notification = req.body;
         let info = [
-            notification.day,
+            dateChange(notification.day),
             notification.hour,
             notification.duration,
             notification.team
