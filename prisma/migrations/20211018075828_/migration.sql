@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE "Notification" ALTER COLUMN "CreatedAt" DROP DEFAULT,
-ALTER COLUMN "CreatedAt" SET DATA TYPE TEXT;
