@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 import TimeTable from './type'
 import dateChange from './functions/dateChange'
-import { time } from 'console'
+
 
 
 async function postTimetable (req: Express.Request, res: Express.Response){

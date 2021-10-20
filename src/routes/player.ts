@@ -1,4 +1,4 @@
-import Express from 'express';
+import Express from "express";
 const router = Express.Router();
 import getPlayers from '../controllers/player/getPlayers';
 import getPlayersById from '../controllers/player/getPlayerById';
@@ -10,17 +10,20 @@ import getPlayerUndefined from '../controllers/player/getPlayerUndefined';
 import getPlayersPunctuation from '../controllers/player/getPlayerPunctuation';
 import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
+import getPlayerAll from '../controllers/player/getPlayerAll';
+import putPlayerQualification from '../controllers/player/putPlayerQualification'
 
-//router.get('/', passport.authenticate('jwt', { session: false }), getPlayers);
-//router.get('/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
+
 router.get('/', getPlayers);
-router.get('/byid/:id', getPlayersById);
-router.get('/available', getPlayerAvailable);
-router.get('/female', getPlayerFemale);
-router.get('/male', getPlayerMale);
-router.get('/undefined', getPlayerUndefined);
-router.get('/punctuation/:order', getPlayersPunctuation);
-router.get('/position/:position', getPlayerByPosition);
-router.get('/byname/:name', getPlayerByName);
+router.get('/byid/:id', passport.authenticate('jwt', { session: false }), getPlayersById);
+router.get('/available', passport.authenticate('jwt', { session: false }), getPlayerAvailable);
+router.get('/female', passport.authenticate('jwt', { session: false }), getPlayerFemale);
+router.get('/male', passport.authenticate('jwt', { session: false }), getPlayerMale);
+router.get('/undefined', passport.authenticate('jwt', { session: false }), getPlayerUndefined);
+router.get('/punctuation/:order', passport.authenticate('jwt', { session: false }), getPlayersPunctuation);
+router.get('/position/:position', passport.authenticate('jwt', { session: false }), getPlayerByPosition);
+router.get('/byname/:name', passport.authenticate('jwt', { session: false }), getPlayerByName);
+router.get('/all', passport.authenticate('jwt', { session: false }), getPlayerAll);
+router.put('/qualification', passport.authenticate('jwt', { session: false }), putPlayerQualification)
 
 export default router;

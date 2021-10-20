@@ -4,12 +4,9 @@ import mapPlayer from './functions/mapPlayer';
 import  Player  from './type';
 const prisma = new PrismaClient();
 
-async function getPlayerAvailable (req: Express.Request, res: Express.Response){
+async function getPlayerAll (req: Express.Request, res: Express.Response){
   try{
     const allPlayers = await prisma.player.findMany({
-      where: {
-        available: true,
-      },
       include: {
         user: true,
       }
@@ -18,7 +15,7 @@ async function getPlayerAvailable (req: Express.Request, res: Express.Response){
 
   if(req.query.search) {
     const query: any = req.query.search;
-    response = response.filter((p: Player) => {
+    response = response.filter((p: any) => {
       return p.name.toUpperCase().includes(query.toUpperCase());
     })
   }
@@ -94,4 +91,4 @@ async function getPlayerAvailable (req: Express.Request, res: Express.Response){
   }
 }
 
-export default getPlayerAvailable;
+export default getPlayerAll;

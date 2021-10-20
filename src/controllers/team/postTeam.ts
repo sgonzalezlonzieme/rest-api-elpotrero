@@ -7,8 +7,9 @@ const prisma = new PrismaClient()
 async function postTeam (req: Express.Request, res: Express.Response){
 
         try{
-            const team: Team = req.body;
-   
+            const team: any = req.body;
+            const id = parseInt(team.id)
+
             const newTeam = await prisma.team.create({
                 data: {
                    name: team.name,
@@ -17,7 +18,7 @@ async function postTeam (req: Express.Request, res: Express.Response){
                    votes: team.votes,
                    user:{
                     connect:{
-                        id: team.user
+                        id: id
                         }
                     },
                     player:{
