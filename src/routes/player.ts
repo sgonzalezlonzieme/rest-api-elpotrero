@@ -12,10 +12,8 @@ import getPlayerByPosition from '../controllers/player/getPlayerByPosition';
 import getPlayerByName from '../controllers/player/getPlayerByName';
 import getPlayerAll from '../controllers/player/getPlayerAll';
 import putPlayerQualification from '../controllers/player/putPlayerQualification'
-<<<<<<< HEAD
 
-//router.get('/', getPlayers);
-//router.get('/:id', getPlayersById);
+
 router.get('/', getPlayers);
 router.get('/byid/:id', getPlayersById);
 router.get('/available', getPlayerAvailable);
@@ -27,23 +25,9 @@ router.get('/position/:position', getPlayerByPosition);
 router.get('/byname/:name', getPlayerByName);
 router.get('/all', getPlayerAll);
 router.put('/qualification', putPlayerQualification)
-=======
-
-
 //router.get('/', getPlayers);
 //router.get('/:id', getPlayersById);
-router.get("/", getPlayers);
-router.get("/byid/:id", getPlayersById);
-router.get("/available", getPlayerAvailable);
-router.get("/female", getPlayerFemale);
-router.get("/male", getPlayerMale);
-router.get("/undefined", getPlayerUndefined);
-router.get("/punctuation/:order", getPlayersPunctuation);
-router.get("/position/:position", getPlayerByPosition);
-router.get("/byname/:name", getPlayerByName);
-router.get("/all", getPlayerAll);
-router.put("/qualification", putPlayerQualification);
 
->>>>>>> d3e52b9ff09c968e2504937f8f917ca0ec5a2e31
+
 
 export default router;
