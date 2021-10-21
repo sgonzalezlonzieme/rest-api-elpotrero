@@ -5,13 +5,6 @@ import Team from './type'
 
 
 async function putTeam (req: Express.Request, res: Express.Response){
-    const { player } = req.body;
-    if (player && player.length) {
-      var arreglo: any = [];
-      player.forEach((e: any) => {
-        arreglo.push({ id: e.id });
-      });
-    }
 
     try{
         let teamId = parseInt(req.params.id)
@@ -39,7 +32,7 @@ async function putTeam (req: Express.Request, res: Express.Response){
                 image: team.image,
                 available: team.available,
                 player:{
-                    set:arreglo
+                    set:team.player
                 }
             }
 
