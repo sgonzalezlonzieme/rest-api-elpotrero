@@ -8,6 +8,13 @@ async function deleteTeam (req: Express.Request, res: Express.Response){
     try{
         let teamId = parseInt(req.params.id)
 
+        await prisma.notificationTeams.deleteMany({
+            where: { teamId: teamId },
+          });
+          await prisma.notification.deleteMany({
+            where: { teamId: teamId },
+          });
+          
         const deleteTeam = await prisma.team.delete({
             where:{
                 id:teamId

@@ -13,6 +13,7 @@ async function getNotificationPlayer (req: Express.Request, res: Express.Respons
                 userId: id,
                },
             include:{
+                player:true,
                 notificactionTeams: 
                 {
                     where:{
@@ -36,6 +37,13 @@ async function getNotificationPlayer (req: Express.Request, res: Express.Respons
             return{
                 id: team.id,
                 teamName: team.name,
+                teamImge: team.image,
+                teamAvailable: team.available,
+                teamPlayers: team.player.map(p =>{
+                    return{
+                        id:p.id
+                    }
+                }),
                 notification: team.notificactionTeams.map(n =>{
                     return{
                         notificationId: n.id,
@@ -73,28 +81,4 @@ catch(e){
 
 export default getNotificationPlayer;
 
-// [
-//     {
-//       "id": 8,
-//       "teamName": "GRUPO HALCON",
-//       "notification": "Sin notificaciones"
-//     },
-//     {
-//       "id": 2,
-//       "teamName": "A.C.D.",
-//       "notification": [
-//         {
-//           "notificationId": 1,
-//           "day": "16/10/2021",
-//           "hour": "13:00",
-//           "duration": 1,
-//           "attending": "PENDING",
-//           "createdAt": "2021-10-20T11:21:39.733Z",
-//           "playerPosition": "GOALKEEPER",
-//           "playerQualification": 5,
-//           "playerName": "Jorden Dodson",
-//           "playerId": 1,
-//           "playerImage": "https://elcomercio.pe/resizer/HaSt-OxS5Ka1U3uIdvTtb0UccSQ=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/YOBYBB2WL5CQFEP553TMA6CKV4.png",
-//           "playerMail": "integer@etarcu.edu",
-//           "playerCell": -2130542016
-//         },
+
