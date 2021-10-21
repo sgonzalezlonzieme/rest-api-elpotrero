@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "prisma": {
     "seed": "ts-node prisma/seed.ts",
-    "schema": "ts-node prisma/schema.prisma"
+    "schema": "prisma/schema.prisma"
   },
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn src/index.ts",
-    "schema": "ts-node prisma/schema.prisma"
+    "start": "ts-node-dev --respawn src/index.ts"
   },
   "author": "",
   "license": "ISC",
