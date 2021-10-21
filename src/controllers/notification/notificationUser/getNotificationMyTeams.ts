@@ -13,6 +13,7 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
             userId: id,
            },
         include:{
+            player:true,
             notificaction: 
             {
                 include:{
@@ -33,6 +34,13 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
         return{
             id: team.id,
             teamName: team.name,
+            teamImage: team.image,
+            teamAvailable: team.available,
+            teamPlayers: team.player.map(p =>{
+                return{
+                    id: p.id
+                }
+            }),
             notification: team.notificaction.map(n =>{
                 return{
                     notificationId: n.id,
@@ -68,3 +76,4 @@ catch(e){
 }; 
 
 export default getNotificationMyTeam;
+
