@@ -3,13 +3,9 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 
-async function getTeamAvailable(req: Express.Request, res: Express.Response){
+async function getAllTeams(req: Express.Request, res: Express.Response){
          
     const team = await prisma.team.findMany({
-         where: {
-             available:true
-            },
-
         include:{
             user: {
                 include:{
@@ -48,5 +44,5 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
     return res.json(response)
 }
 
-export default getTeamAvailable
+export default getAllTeams
 

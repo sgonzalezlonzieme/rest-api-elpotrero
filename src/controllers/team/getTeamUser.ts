@@ -24,19 +24,27 @@ async function getTeamUser(req: Express.Request, res: Express.Response){
          }
     })
     
-    let player = playerInfo(team)
-
+    // let player = playerInfo(team)
+    
     const response = team.map(t =>{
-        return {
+        return{
             id: t.id,
             name: t.name,
             image: t.image,
             qualification: t.qualification,
             votes: t.votes,
             available: t.available,
-            players: player[0],
+            players: t.player.map(p =>{
+                return{
+                    id: p.user[0].id,
+                    position: p.position,
+                    name: p.user[0].name,
+                    qualification:Math.round(p.qualification/p.votes)
+                }
+            })
         }
     })
+    
     return  res.json(response)
     }
     catch(e){
