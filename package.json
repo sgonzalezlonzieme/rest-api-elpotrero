@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "prisma": {
     "seed": "ts-node prisma/seed.ts",
-    "schema": "prisma/schema.prisma"
+    "schema": "ts node prisma/schema.prisma"
   },
   "description": "",
   "main": "index.js",
