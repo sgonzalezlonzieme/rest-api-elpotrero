@@ -25,7 +25,7 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
     })
 
     
-    const response = team.map(t =>{
+    let response = team.map(t =>{
         return{
         id: t.id,
         name: t.name,
@@ -44,6 +44,12 @@ async function getTeamAvailable(req: Express.Request, res: Express.Response){
         })
     }
     })
+
+  response = response.sort((a: any, b: any) => {
+    if (a.name > b.name) return 1;
+    if (a.name < b.name) return -1;
+    return 0;
+  });
 
     return res.json(response)
 }
