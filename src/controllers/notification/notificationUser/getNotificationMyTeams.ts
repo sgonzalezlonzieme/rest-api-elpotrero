@@ -36,11 +36,11 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
             teamName: team.name,
             teamImage: team.image,
             teamAvailable: team.available,
-            teamPlayers: team.player.map(p =>{
-                return{
-                    id: p.id
-                }
-            }),
+            // teamPlayers: team.player.map(p =>{
+            //     return{
+            //         id: p.id
+            //     }
+            // }),
             notification: team.notificaction.map(n =>{
                 return{
                     notificationId: n.id,
@@ -68,7 +68,7 @@ async function getNotificationMyTeam (req: Express.Request, res: Express.Respons
             }
         }
     })
-   return res.json(response);
+   return res.json(teamUser);
 }
 catch(e){
     console.log("error in getting notifications",e)
