@@ -20,10 +20,6 @@ export default new GoogleStrategy(
       mail: profile._json.email,
       image: profile._json.picture,
     };
-    // console.log("DEFAULTUSER USERNAME", defaultUser.userName)
-    //VER QUE INFORMACIÓN LE PUEDO SACAR AL PROFILE, VER COMO SACAR EL USERNAME SI
-    //NO VIENE, Y CONFIGURAR PARA QUE LLEGUE LA IMAGEN
-    console.log("PROFILE DETAILS", profile, "MAIIILL", profile.emails);
 
     const userDb = await prisma.user.findFirst({
       where: { googleId: defaultUser.googleId },
