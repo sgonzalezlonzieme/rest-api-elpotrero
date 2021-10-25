@@ -13,7 +13,8 @@ async function getNotificationsRespond (req: Express.Request, res: Express.Respo
         include:{
             team:{
                 include:{
-                    user: true
+                    user: true,
+                    player:true
                 }
             }
         },
@@ -28,6 +29,13 @@ async function getNotificationsRespond (req: Express.Request, res: Express.Respo
             attending: invitation.attending,
             teamId: invitation.team.id,
             teamName: invitation.team.name,
+            teamImage: invitation.team.image,
+            teamAvailable: invitation.team.available,
+            teamPlayers : invitation.team.player.map(t =>{
+                return{
+                    id: t.id
+                }
+            }),
             teamQualification: Math.round(invitation.team.qualification/invitation.team.votes),
             userId: invitation.team.user.id,
             userName: invitation.team.user.name,
@@ -44,3 +52,4 @@ catch(e){
 }; 
 
 export default getNotificationsRespond;
+

@@ -5,6 +5,7 @@ import Team from './type'
 
 
 async function putTeam (req: Express.Request, res: Express.Response){
+
     try{
         let teamId = parseInt(req.params.id)
         const team: Team = req.body
@@ -31,7 +32,7 @@ async function putTeam (req: Express.Request, res: Express.Response){
                 image: team.image,
                 available: team.available,
                 player:{
-                    set:team.player 
+                    set:team.player
                 }
             }
 
