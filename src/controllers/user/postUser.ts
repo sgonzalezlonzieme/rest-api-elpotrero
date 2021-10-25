@@ -5,6 +5,8 @@ const prisma = new PrismaClient();
 import bcrypt from "bcrypt";
 
 async function postUser(req: Express.Request, res: Express.Response) {
+  console.log("LLEGUÉ AL BACK");
+  
   try {
     const user: User = req.body;
 

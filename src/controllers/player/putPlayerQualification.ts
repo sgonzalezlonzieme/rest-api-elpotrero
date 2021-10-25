@@ -2,7 +2,6 @@ import  Express  from "express";
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-
 async function putPlayerQualification(req: Express.Request, res: Express.Response) {
     
         const {id, qualification} = req.body

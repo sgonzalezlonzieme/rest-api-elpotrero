@@ -12,7 +12,7 @@ router.post('/googleLogin', postGoogleLogin)
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }), 
 (req, res) => {
 res.cookie("user", req.user)
-res.redirect(`http://localhost:8080/googleForm`)
+res.redirect(`http://localhost:8081/googleForm`)
 })
 
 export default router
