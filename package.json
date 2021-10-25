@@ -1,6 +1,10 @@
 {
   "name": "api",
   "version": "1.0.0",
+  "engines": {
+      "node": "14.x",
+      "npm": "7.x"
+    },
   "prisma": {
     "seed": "ts-node prisma/seed.ts",
     "schema": "prisma/schema.prisma"
