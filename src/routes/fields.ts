@@ -9,7 +9,7 @@ import passport from "passport";
 // const { getActivities, addActivity } = require('../controllers');
 const router = Express.Router();
 
-router.get("/", passport.authenticate("jwt", { session: false }), getFields);
+router.get("/", getFields);
 router.get("/available/:day", getFieldsAvailable); //Sin passport, no hay que ponerle
 router.post("/", passport.authenticate("jwt", { session: false }), postField);
 router.put("/:id", passport.authenticate("jwt", { session: false }), putField);
