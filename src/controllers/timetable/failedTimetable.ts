@@ -1,16 +1,14 @@
-import Express from 'express'
-import { PrismaClient } from '@prisma/client'
-import deleteTime from './functions/deleteTime'
-const prisma = new PrismaClient()
+import Express from "express";
+import { PrismaClient } from "@prisma/client";
+import deleteTime from "./functions/deleteTime";
+const prisma = new PrismaClient();
 
+async function failedTimetable(req: Express.Request, res: Express.Response) {
+  let timetableId = parseInt(req.params.id);
 
-async function failedTimetable (req: Express.Request, res: Express.Response){
+  deleteTime(timetableId);
 
-    let timetableId = parseInt(req.params.id);
-
-    deleteTime(timetableId);
-
-   return res.redirect(`http://localhost:3001/failed`);
-}; 
+  return res.redirect(`https://elpotrero2021.herokuapp.com/failed`);
+}
 
 export default failedTimetable;
