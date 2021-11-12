@@ -10,7 +10,7 @@ export default new GoogleStrategy(
     clientID:
       "653542961605-hhhqumktukgektmpv755mlmm9cec1ncd.apps.googleusercontent.com",
     clientSecret: "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",
-    callbackURL: "http://localhost:3001/auth/google", //Ver como se llama y cambiar en credentials
+    callbackURL: "https://deploy-potrero.vercel.app/auth/google", //Ver como se llama y cambiar en credentials
     passReqToCallback: true,
   },
   async (req, accessToken, refreshToken, profile, cb) => {
