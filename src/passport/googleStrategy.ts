@@ -8,8 +8,8 @@ const GoogleStrategy = passportGoogle.Strategy;
 export default new GoogleStrategy(
   {
     clientID:
-      "653542961605-hhhqumktukgektmpv755mlmm9cec1ncd.apps.googleusercontent.com",
-    clientSecret: "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",
+      "33800208115-2pms7bineeq06gocreojqfg5vmveumdp.apps.googleusercontent.com",
+    clientSecret: "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",
     callbackURL: "https://elpotrero2021.herokuapp.com/auth/google", //Ver como se llama y cambiar en credentials
     passReqToCallback: true,
   },
