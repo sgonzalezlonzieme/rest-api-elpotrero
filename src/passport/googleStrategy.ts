@@ -10,8 +10,9 @@ export default new GoogleStrategy(
     clientID:
       "33800208115-2pms7bineeq06gocreojqfg5vmveumdp.apps.googleusercontent.com",
     clientSecret: "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",
-    callbackURL: "https://elpotrero2021.herokuapp.com/auth/google", //Ver como se llama y cambiar en credentials
+    callbackURL: "/auth/google", //Ver como se llama y cambiar en credentials
     passReqToCallback: true,
+    proxy: true,
   },
   async (req, accessToken, refreshToken, profile, cb) => {
     const defaultUser = {
